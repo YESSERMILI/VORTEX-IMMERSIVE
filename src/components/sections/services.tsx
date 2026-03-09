@@ -54,7 +54,7 @@ export const Services = () => {
       <div id="services-section" className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
         <div className={cn("max-w-3xl mb-24 opacity-0", isVisible && "animate-fade-up")}>
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6 block">Our Capabilities</span>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-8 font-headline uppercase leading-none">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-8 font-headline uppercase leading-none">
             Digital <span className="text-primary italic">Spectacles</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed italic">
@@ -68,7 +68,7 @@ export const Services = () => {
               href={`/services/${s.id}`}
               key={s.id}
               className={cn(
-                "group relative bg-card p-12 transition-all duration-500 hover:bg-background/80 opacity-0 block overflow-hidden",
+                "group relative bg-card p-12 lg:p-16 transition-all duration-500 hover:bg-background/80 opacity-0 block overflow-hidden",
                 isVisible && "animate-fade-up"
               )}
               style={{ animationDelay: `${0.2 + i * 0.1}s` }}
@@ -76,22 +76,21 @@ export const Services = () => {
               <div className="text-primary mb-12 transition-transform duration-500 group-hover:scale-110 origin-left">
                 {s.icon}
               </div>
-              <h3 className="text-xl font-bold font-headline mb-4 group-hover:text-primary transition-colors uppercase tracking-tight">{s.title}</h3>
-              <p className="text-muted-foreground mb-12 text-xs leading-relaxed max-w-sm italic">
+              <h3 className="text-2xl font-black font-headline mb-6 group-hover:text-primary transition-colors uppercase tracking-tight leading-none">{s.title}</h3>
+              <p className="text-muted-foreground mb-12 text-sm leading-relaxed max-w-sm italic">
                 {s.desc}
               </p>
               <div className="flex flex-wrap gap-2 mb-16">
                 {s.tags.map(tag => (
-                  <span key={tag} className="text-[8px] font-black uppercase tracking-widest border border-border px-3 py-1 text-muted-foreground group-hover:border-primary group-hover:text-primary transition-colors">
+                  <span key={tag} className="text-[9px] font-black uppercase tracking-widest border border-border px-4 py-1.5 text-muted-foreground group-hover:border-primary group-hover:text-primary transition-colors">
                     {tag}
                   </span>
                 ))}
               </div>
-              <div className="absolute top-12 right-12 w-10 h-10 flex items-center justify-center border border-border group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                <ArrowUpRight className="w-4 h-4 group-hover:text-primary-foreground" />
+              <div className="absolute top-12 right-12 w-12 h-12 flex items-center justify-center border border-border group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                <ArrowUpRight className="w-5 h-5 group-hover:text-primary-foreground" />
               </div>
               
-              {/* Creative background reveal on hover */}
               <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700 pointer-events-none" />
             </Link>
           ))}

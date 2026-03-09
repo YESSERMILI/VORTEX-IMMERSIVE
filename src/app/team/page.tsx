@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Mail, Linkedin, Twitter, Sparkles, Code2, Globe, Zap, Cpu, Palette } from 'lucide-react';
+import { ArrowLeft, Mail, Linkedin, Twitter, Sparkles, Code2, Globe, Zap, Cpu, Palette, Plus } from 'lucide-react';
 
 const TEAM_MEMBERS = [
   {
@@ -73,6 +73,22 @@ const TEAM_MEMBERS = [
     specialty: "Motion Graphics",
     tech: ["After Effects", "C4D"],
     seed: "anya"
+  },
+  {
+    name: "Lukas Weber",
+    role: "VFX Supervisor",
+    bio: "Lukas oversees the visual effects pipeline, ensuring high-fidelity output for large-scale LED volumes.",
+    specialty: "VFX Rendering",
+    tech: ["Maya", "Nuke"],
+    seed: "lukas"
+  },
+  {
+    name: "Zara Ahmed",
+    role: "Experience Strategist",
+    bio: "Zara bridge the gap between brand narrative and physical experience through strategic audience engagement.",
+    specialty: "Strategic UX",
+    tech: ["Research", "Strategy"],
+    seed: "zara"
   }
 ];
 
@@ -98,7 +114,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8 space-y-8">
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">The Collective</span>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
                 THE MINDS BEHIND <br />
                 <span className="text-primary italic">THE SPECTACLE</span>
               </h1>
@@ -115,9 +131,9 @@ export default function TeamPage() {
       {/* Team Grid - Scrollable vertical list */}
       <section className="py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-20">
             {TEAM_MEMBERS.map((member, i) => (
-              <div key={member.name} className="group space-y-6">
+              <div key={member.name} className="group space-y-8">
                 <div className="relative aspect-[3/4] bg-card border border-border overflow-hidden grayscale transition-all duration-700 group-hover:grayscale-0">
                   <Image 
                     src={`https://picsum.photos/seed/${member.seed}/600/800`} 
@@ -133,75 +149,43 @@ export default function TeamPage() {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="space-y-1">
-                    <h3 className="text-xl font-black font-headline uppercase tracking-tighter">{member.name}</h3>
-                    <p className="text-[9px] font-black uppercase tracking-[0.3em] text-primary">{member.role}</p>
+                    <h3 className="text-2xl font-black font-headline uppercase tracking-tighter leading-none">{member.name}</h3>
+                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">{member.role}</p>
                   </div>
                   
-                  <p className="text-muted-foreground text-[11px] leading-relaxed italic line-clamp-3 h-[4.5em]">
+                  <p className="text-muted-foreground text-[12px] leading-relaxed italic line-clamp-4 h-[6em]">
                     {member.bio}
                   </p>
 
-                  <div className="space-y-3 pt-2">
-                    <div className="flex flex-wrap gap-1.5 min-h-[1.5rem]">
+                  <div className="space-y-4 pt-2">
+                    <div className="flex flex-wrap gap-2 min-h-[1.5rem]">
                       {member.tech.map(t => (
-                        <span key={t} className="text-[8px] font-bold uppercase tracking-widest border border-border px-2 py-0.5 text-muted-foreground">
+                        <span key={t} className="text-[8px] font-black uppercase tracking-widest border border-border px-3 py-1 text-muted-foreground group-hover:border-primary group-hover:text-primary transition-colors">
                           {t}
                         </span>
                       ))}
                     </div>
-                    <div className="flex gap-4">
-                      <Mail className="w-3.5 h-3.5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-                      <Linkedin className="w-3.5 h-3.5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-                      <Twitter className="w-3.5 h-3.5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                    <div className="flex gap-6 pt-2 border-t border-border mt-4">
+                      <Mail className="w-4 h-4 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                      <Linkedin className="w-4 h-4 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                      <Twitter className="w-4 h-4 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-32 bg-card border-y border-border">
-        <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="max-w-4xl space-y-16">
-            <h2 className="text-3xl md:text-5xl font-black font-headline tracking-tighter uppercase leading-none">
-              OUR <span className="text-primary italic">DNA</span>
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <div className="space-y-4">
-                <div className="w-8 h-[1px] bg-primary" />
-                <h4 className="text-xs font-bold uppercase tracking-tight flex items-center gap-2">
-                  <Code2 className="w-3 h-3 text-primary" />
-                  Technical Rigor
-                </h4>
-                <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                  We don't just use technology; we engineer it. Every installation is a byproduct of intensive research and custom prototyping.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="w-8 h-[1px] bg-primary" />
-                <h4 className="text-xs font-bold uppercase tracking-tight flex items-center gap-2">
-                  <Zap className="w-3 h-3 text-primary" />
-                  Emotional Resonance
-                </h4>
-                <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                  Pixels mean nothing without purpose. We focus on the intersection of human emotion and precision engineering.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="w-8 h-[1px] bg-primary" />
-                <h4 className="text-xs font-bold uppercase tracking-tight flex items-center gap-2">
-                  <Globe className="w-3 h-3 text-primary" />
-                  Global Execution
-                </h4>
-                <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                  From New York to Seoul, our technical standards remain consistent across any environment, scale, or complexity.
-                </p>
-              </div>
+            
+            {/* Join Us Card */}
+            <div className="group border border-dashed border-border p-12 flex flex-col items-center justify-center text-center gap-6 hover:border-primary transition-colors cursor-pointer">
+               <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all">
+                  <Plus className="w-6 h-6 group-hover:text-primary-foreground" />
+               </div>
+               <div className="space-y-2">
+                 <h4 className="text-xl font-black font-headline uppercase tracking-tighter">Join the Collective</h4>
+                 <p className="text-[10px] text-muted-foreground uppercase tracking-widest italic">We are always seeking visionaries.</p>
+               </div>
             </div>
           </div>
         </div>

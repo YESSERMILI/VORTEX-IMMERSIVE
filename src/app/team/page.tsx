@@ -7,13 +7,13 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Mail, Linkedin, Twitter, Sparkles, Code2, Globe, Zap } from 'lucide-react';
+import { ArrowLeft, Mail, Linkedin, Twitter, Sparkles, Code2, Globe, Zap, Cpu, Palette } from 'lucide-react';
 
 const TEAM_MEMBERS = [
   {
     name: "Julian Vortex",
     role: "Creative Director",
-    bio: "Julian leads the studio's artistic vision, blending architectural principles with real-time generative art.",
+    bio: "Julian leads the studio's artistic vision, blending architectural principles with real-time generative art and large-scale projection design.",
     specialty: "Projection Mapping",
     tech: ["Unreal Engine", "Houdini"],
     seed: "julian"
@@ -21,7 +21,7 @@ const TEAM_MEMBERS = [
   {
     name: "Sarah Chen",
     role: "Lead Systems Engineer",
-    bio: "Sarah oversees the technical infrastructure for our stadium-scale installations and custom hardware r&d.",
+    bio: "Sarah oversees the technical infrastructure for our stadium-scale installations and custom hardware R&D for global tours.",
     specialty: "Systems Architecture",
     tech: ["Disguise VX4", "C++"],
     seed: "sarah"
@@ -29,7 +29,7 @@ const TEAM_MEMBERS = [
   {
     name: "Marcus Thorne",
     role: "Interactive Designer",
-    bio: "Marcus develops responsive environments that react to audience movement and real-time bio-data.",
+    bio: "Marcus develops responsive environments that react to audience movement, biometric data, and environmental triggers.",
     specialty: "HCI / Interaction",
     tech: ["TouchDesigner", "LiDAR"],
     seed: "marcus"
@@ -37,10 +37,42 @@ const TEAM_MEMBERS = [
   {
     name: "Elena Rossi",
     role: "Executive Producer",
-    bio: "Elena manages our global project portfolio, ensuring seamless execution across five continents.",
+    bio: "Elena manages our global project portfolio, ensuring seamless execution and logistics across five continents.",
     specialty: "Global Logistics",
     tech: ["Strategic Planning", "UX"],
     seed: "elena"
+  },
+  {
+    name: "David Okafor",
+    role: "Technical Artist",
+    bio: "David specializes in real-time VFX and procedural environment generation for immersive VR/AR experiences.",
+    specialty: "Real-time FX",
+    tech: ["Niagara", "Blender"],
+    seed: "david"
+  },
+  {
+    name: "Sofia Lindholm",
+    role: "Spatial UI Designer",
+    bio: "Sofia designs intuitive interfaces for three-dimensional spaces, focusing on gaze and gesture-based interaction models.",
+    specialty: "Spatial Computing",
+    tech: ["Unity", "Figma"],
+    seed: "sofia"
+  },
+  {
+    name: "Kenji Sato",
+    role: "Hardware Engineer",
+    bio: "Kenji builds the custom sensors and kinetic motors that bring our physical installations to life.",
+    specialty: "Embedded Systems",
+    tech: ["Arduino", "PCB Design"],
+    seed: "kenji"
+  },
+  {
+    name: "Anya Petrova",
+    role: "Motion Designer",
+    bio: "Anya crafts high-fidelity cinematic content for 8K displays and non-standard architectural facades.",
+    specialty: "Motion Graphics",
+    tech: ["After Effects", "C4D"],
+    seed: "anya"
   }
 ];
 
@@ -80,10 +112,10 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Team Grid - Now 4 columns for smaller, more elegant cards */}
+      {/* Team Grid - Scrollable vertical list */}
       <section className="py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
             {TEAM_MEMBERS.map((member, i) => (
               <div key={member.name} className="group space-y-6">
                 <div className="relative aspect-[3/4] bg-card border border-border overflow-hidden grayscale transition-all duration-700 group-hover:grayscale-0">
@@ -107,12 +139,12 @@ export default function TeamPage() {
                     <p className="text-[9px] font-black uppercase tracking-[0.3em] text-primary">{member.role}</p>
                   </div>
                   
-                  <p className="text-muted-foreground text-[11px] leading-relaxed italic line-clamp-3">
+                  <p className="text-muted-foreground text-[11px] leading-relaxed italic line-clamp-3 h-[4.5em]">
                     {member.bio}
                   </p>
 
                   <div className="space-y-3 pt-2">
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 min-h-[1.5rem]">
                       {member.tech.map(t => (
                         <span key={t} className="text-[8px] font-bold uppercase tracking-widest border border-border px-2 py-0.5 text-muted-foreground">
                           {t}
@@ -147,7 +179,7 @@ export default function TeamPage() {
                   Technical Rigor
                 </h4>
                 <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                  We don't just use technology; we engineer it. Every installation is a byproduct of intensive research.
+                  We don't just use technology; we engineer it. Every installation is a byproduct of intensive research and custom prototyping.
                 </p>
               </div>
               <div className="space-y-4">
@@ -157,7 +189,7 @@ export default function TeamPage() {
                   Emotional Resonance
                 </h4>
                 <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                  Pixels mean nothing without purpose. We focus on the intersection of human emotion and precision.
+                  Pixels mean nothing without purpose. We focus on the intersection of human emotion and precision engineering.
                 </p>
               </div>
               <div className="space-y-4">
@@ -167,7 +199,7 @@ export default function TeamPage() {
                   Global Execution
                 </h4>
                 <p className="text-[11px] text-muted-foreground leading-relaxed italic">
-                  From New York to Seoul, our technical standards remain consistent across any environment.
+                  From New York to Seoul, our technical standards remain consistent across any environment, scale, or complexity.
                 </p>
               </div>
             </div>

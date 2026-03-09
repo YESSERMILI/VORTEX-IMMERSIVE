@@ -95,7 +95,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden py-32 pb-48" id="hero">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden py-32 pb-24" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">

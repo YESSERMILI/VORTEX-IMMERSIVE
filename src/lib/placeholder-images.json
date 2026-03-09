@@ -3,44 +3,44 @@
     {
       "id": "work-1",
       "description": "World Cup Opening Ceremony",
-      "imageUrl": "https://picsum.photos/seed/vortex1/1200/800",
-      "imageHint": "stadium spectacle"
+      "imageUrl": "https://picsum.photos/seed/vortex-stadium/1200/800",
+      "imageHint": "stadium mapping"
     },
     {
       "id": "work-2",
       "description": "Electric Symphony World Tour",
-      "imageUrl": "https://picsum.photos/seed/vortex2/1200/800",
-      "imageHint": "concert visuals"
+      "imageUrl": "https://picsum.photos/seed/vortex-concert/1200/800",
+      "imageHint": "stage visuals"
     },
     {
       "id": "work-3",
       "description": "Future Tech Summit",
-      "imageUrl": "https://picsum.photos/seed/vortex3/1200/800",
-      "imageHint": "hologram technology"
+      "imageUrl": "https://picsum.photos/seed/vortex-hologram/1200/800",
+      "imageHint": "digital hologram"
     },
     {
       "id": "work-4",
       "description": "Digital Ocean Pavilion",
-      "imageUrl": "https://picsum.photos/seed/vortex4/1200/800",
+      "imageUrl": "https://picsum.photos/seed/vortex-ocean/1200/800",
       "imageHint": "interactive art"
     },
     {
       "id": "work-5",
       "description": "Aurora Borealis Experience",
-      "imageUrl": "https://picsum.photos/seed/vortex5/1200/800",
-      "imageHint": "light installation"
+      "imageUrl": "https://picsum.photos/seed/vortex-lights/1200/800",
+      "imageHint": "immersive lighting"
     },
     {
       "id": "work-6",
       "description": "Global Brand Summit",
-      "imageUrl": "https://picsum.photos/seed/vortex6/1200/800",
-      "imageHint": "architectural mapping"
+      "imageUrl": "https://picsum.photos/seed/vortex-projection/1200/800",
+      "imageHint": "projection mapping"
     },
     {
       "id": "about-studio",
       "description": "Vortex Immersive Studio",
-      "imageUrl": "https://picsum.photos/seed/studio/800/1000",
-      "imageHint": "creative studio"
+      "imageUrl": "https://picsum.photos/seed/vortex-office/800/1000",
+      "imageHint": "tech office"
     }
   ]
 }

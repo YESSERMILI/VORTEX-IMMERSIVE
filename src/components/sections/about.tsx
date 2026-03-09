@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -66,7 +67,7 @@ export const About = () => {
               alt="Vortex Immersive Studio"
               fill
               className="object-cover transition-transform duration-1000 hover:scale-105"
-              data-ai-hint="creative office"
+              data-ai-hint={studioImage?.imageHint || "tech office"}
             />
             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none" />
             <div className="absolute bottom-12 left-12 right-12 p-8 bg-background/80 backdrop-blur-xl border border-white/10 space-y-2">

@@ -18,17 +18,17 @@ export default function Home() {
       
       <Hero />
       
-      {/* Stats Quick Ribbon */}
-      <section className="bg-primary text-primary-foreground py-12 overflow-hidden relative border-y border-white/10">
+      {/* Stats Quick Ribbon - Professional Silver Ribbon */}
+      <section className="bg-primary text-primary-foreground py-16 overflow-hidden relative border-y border-white/5">
         <div className="flex whitespace-nowrap animate-marquee items-center gap-12">
           {Array.from({length: 10}).map((_, i) => (
-            <div key={i} className="flex items-center gap-12 text-sm font-black uppercase tracking-[0.4em]">
+            <div key={i} className="flex items-center gap-12 text-[10px] font-black uppercase tracking-[0.5em]">
               <span>Projection Mapping</span>
-              <div className="w-2 h-2 rotate-45 bg-primary-foreground" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-primary-foreground/30" />
               <span>Stage Visuals</span>
-              <div className="w-2 h-2 rotate-45 bg-primary-foreground" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-primary-foreground/30" />
               <span>Interactive Tech</span>
-              <div className="w-2 h-2 rotate-45 bg-primary-foreground" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-primary-foreground/30" />
             </div>
           ))}
         </div>
@@ -38,7 +38,7 @@ export default function Home() {
             100% { transform: translateX(-50%); }
           }
           .animate-marquee {
-            animation: marquee 40s linear infinite;
+            animation: marquee 30s linear infinite;
             display: inline-flex;
             width: max-content;
           }

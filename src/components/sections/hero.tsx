@@ -19,7 +19,7 @@ export const Hero = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const particleCount = 3000;
+    const particleCount = 4000;
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
 
@@ -36,24 +36,23 @@ export const Hero = () => {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
-    // Updated to creamy grey colors
     const material = new THREE.PointsMaterial({
-      size: 0.6,
-      color: 0xd1ccc0,
+      size: 0.4,
+      color: 0xffffff,
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.4,
       blending: THREE.AdditiveBlending
     });
 
     const particleSystem = new THREE.Points(geometry, material);
     scene.add(particleSystem);
 
-    const sphereGeo = new THREE.IcosahedronGeometry(12, 2);
+    const sphereGeo = new THREE.IcosahedronGeometry(15, 2);
     const sphereMat = new THREE.MeshBasicMaterial({
-      color: 0x8c8a81,
+      color: 0xffffff,
       wireframe: true,
       transparent: true,
-      opacity: 0.15
+      opacity: 0.05
     });
     const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere);
@@ -75,13 +74,11 @@ export const Hero = () => {
       }
 
       particleSystem.geometry.attributes.position.needsUpdate = true;
-      particleSystem.rotation.y = time * 0.1;
+      particleSystem.rotation.y = time * 0.05;
 
-      sphere.rotation.x = time * 0.2;
-      sphere.rotation.y = time * 0.3;
-      const s = 1 + Math.sin(time * 2) * 0.05;
-      sphere.scale.set(s, s, s);
-
+      sphere.rotation.x = time * 0.1;
+      sphere.rotation.y = time * 0.15;
+      
       renderer.render(scene, camera);
     };
 
@@ -98,7 +95,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20" id="hero">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden py-32" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
@@ -107,7 +104,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-8 font-headline max-w-4xl">
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-12 font-headline max-w-4xl">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">We Create</span>
           </span>
@@ -119,26 +116,21 @@ export const Hero = () => {
           </span>
         </h1>
         
-        <p className="max-w-lg text-lg text-muted-foreground leading-relaxed mb-12 animate-fade-up [animation-delay:0.4s]">
+        <p className="max-w-lg text-lg text-muted-foreground leading-relaxed mb-16 animate-fade-up [animation-delay:0.4s]">
           Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles that captivate audiences worldwide.
         </p>
         
-        <div className="flex flex-wrap gap-4 animate-fade-up [animation-delay:0.6s]">
-          <Button size="lg" className="h-14 px-8 rounded-none group" asChild>
+        <div className="flex flex-wrap gap-6 animate-fade-up [animation-delay:0.6s]">
+          <Button size="lg" className="h-16 px-10 rounded-none group text-sm font-bold uppercase tracking-widest" asChild>
             <a href="#works">
               Explore Works
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
-          <Button variant="outline" size="lg" className="h-14 px-8 rounded-none" asChild>
+          <Button variant="outline" size="lg" className="h-16 px-10 rounded-none text-sm font-bold uppercase tracking-widest" asChild>
             <a href="#contact">Get in Touch</a>
           </Button>
         </div>
-      </div>
-      
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-muted-foreground animate-fade-up [animation-delay:0.8s]">
-        <span>Scroll to Discover</span>
-        <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent animate-pulse" />
       </div>
     </section>
   );

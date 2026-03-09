@@ -1,7 +1,14 @@
-
 import React from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Instagram, Linkedin, Twitter, Github, ArrowUpRight } from 'lucide-react';
+
+const FOOTER_SERVICES = [
+  { name: "Projection Mapping", slug: "projection-mapping" },
+  { name: "Stage Visuals", slug: "stage-visuals" },
+  { name: "Interactive Installations", slug: "interactive-installations" },
+  { name: "Content Production", slug: "content-production" }
+];
 
 export const Footer = () => {
   return (
@@ -9,7 +16,9 @@ export const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-24">
           <div className="lg:col-span-2 space-y-8">
-            <h2 className="text-3xl font-black font-headline tracking-tighter">VORTEX <span className="text-primary">IMMERSIVE</span></h2>
+            <Link href="/" className="text-3xl font-black font-headline tracking-tighter">
+              VORTEX <span className="text-primary">IMMERSIVE</span>
+            </Link>
             <p className="text-muted-foreground max-w-sm leading-relaxed">
               Pioneers in creative technology, transforming spaces into immersive digital experiences since 2007.
             </p>
@@ -32,26 +41,29 @@ export const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted-foreground">Services</h4>
             <ul className="space-y-3">
-              {["Projection Mapping", "Stage Visuals", "Interactive Installations", "Content Production"].map(item => (
-                <li key={item}>
-                  <a href="#" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center group">
-                    {item}
+              {FOOTER_SERVICES.map(service => (
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center group">
+                    {service.name}
                     <ArrowUpRight className="ml-1 w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="space-y-6">
-            <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted-foreground">Locations</h4>
+            <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted-foreground">Studio</h4>
             <ul className="space-y-3">
-              {["New York", "Dubai", "London", "Seoul"].map(item => (
+              {["Our Team", "About Us", "Contact", "Careers"].map(item => (
                 <li key={item}>
-                  <a href="#" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center group">
+                  <Link 
+                    href={item === "Our Team" ? "/team" : item === "Careers" ? "/join" : item === "About Us" ? "/about" : "/#contact"} 
+                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center group"
+                  >
                     {item}
                     <ArrowUpRight className="ml-1 w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

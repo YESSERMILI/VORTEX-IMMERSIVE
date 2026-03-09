@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -38,7 +37,7 @@ export const Works = () => {
   const filteredWorks = filter === 'all' ? WORKS : WORKS.filter(w => w.category === filter);
 
   return (
-    <section className="py-24 bg-background" id="works">
+    <section className="py-32 bg-background" id="works">
       <div id="works-section" className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
         <div className={cn("flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 opacity-0", isVisible && "animate-fade-up")}>
           <div className="space-y-4">

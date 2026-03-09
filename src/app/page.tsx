@@ -1,4 +1,3 @@
-
 import { Preloader } from '@/components/ui/preloader';
 import { CustomCursor } from '@/components/ui/custom-cursor';
 import { Navbar } from '@/components/sections/navbar';
@@ -20,7 +19,7 @@ export default function Home() {
       <Hero />
       
       {/* Stats Quick Ribbon */}
-      <section className="bg-primary text-primary-foreground py-10 overflow-hidden relative border-y border-white/10">
+      <section className="bg-primary text-primary-foreground py-12 overflow-hidden relative border-y border-white/10">
         <div className="flex whitespace-nowrap animate-marquee items-center gap-12">
           {Array.from({length: 10}).map((_, i) => (
             <div key={i} className="flex items-center gap-12 text-sm font-black uppercase tracking-[0.4em]">
@@ -51,7 +50,7 @@ export default function Home() {
       <About />
       
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-background border-t border-border">
+      <section id="contact" className="py-32 bg-background border-t border-border">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
             <div className="space-y-8">

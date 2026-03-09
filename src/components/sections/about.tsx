@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -27,7 +26,7 @@ export const About = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-background overflow-hidden" id="about">
+    <section className="py-32 bg-background overflow-hidden" id="about">
       <div id="about-section" className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
           <div className={cn("space-y-12 opacity-0", isVisible && "animate-fade-up")}>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -45,7 +44,7 @@ export const Services = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-card border-y border-border" id="services">
+    <section className="py-32 bg-card border-y border-border" id="services">
       <div id="services-section" className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
         <div className={cn("max-w-3xl mb-16 opacity-0", isVisible && "animate-fade-up")}>
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 font-headline">

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useRef } from 'react';
@@ -37,11 +36,12 @@ export const Hero = () => {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
+    // Updated to creamy grey colors
     const material = new THREE.PointsMaterial({
       size: 0.6,
-      color: 0x1acced,
+      color: 0xd1ccc0,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.3,
       blending: THREE.AdditiveBlending
     });
 
@@ -50,10 +50,10 @@ export const Hero = () => {
 
     const sphereGeo = new THREE.IcosahedronGeometry(12, 2);
     const sphereMat = new THREE.MeshBasicMaterial({
-      color: 0x66f0db,
+      color: 0x8c8a81,
       wireframe: true,
       transparent: true,
-      opacity: 0.1
+      opacity: 0.15
     });
     const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere);

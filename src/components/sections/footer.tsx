@@ -25,18 +25,16 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4">
               <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all">
-                <Instagram className="w-4 h-4" />
+                <Instagram className="h-4 w-4" />
               </Button>
               <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all">
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="h-4 w-4" />
               </Button>
               <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all">
-                <Twitter className="w-4 h-4" />
+                <Twitter className="h-4 w-4" />
               </Button>
-              <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all" asChild>
-                <a href="https://github.com/vorteximmersive/vortex-studio" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4 h-4" />
-                </a>
+              <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all">
+                <Github className="h-4 w-4" />
               </Button>
             </div>
           </div>

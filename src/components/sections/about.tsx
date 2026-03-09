@@ -3,14 +3,16 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 
 const STATS = [
-  { label: "Industry Awards", value: "45+", count: 45 },
-  { label: "Global Offices", value: "4", count: 4 },
-  { label: "Support", value: "24/7", count: 24 },
-  { label: "Project Success", value: "100%", count: 100 }
+  { label: "Industry Awards", value: "45+", count: 45, id: "awards" },
+  { label: "Global Offices", value: "4", count: 4, id: "offices" },
+  { label: "Support", value: "24/7", count: 24, id: "support" },
+  { label: "Project Success", value: "100%", count: 100, id: "success" }
 ];
 
 export const About = () => {
@@ -49,32 +51,39 @@ export const About = () => {
 
             <div className="grid grid-cols-2 gap-8 pt-8">
               {STATS.map(stat => (
-                <div key={stat.label} className="space-y-2 group">
-                  <p className="text-4xl md:text-5xl font-black font-headline tracking-tighter transition-colors group-hover:text-primary">
+                <Link key={stat.id} href={`/about#${stat.id}`} className="space-y-2 group block cursor-pointer">
+                  <p className="text-4xl md:text-5xl font-black font-headline tracking-tighter transition-all group-hover:text-primary group-hover:translate-x-1">
                     {stat.value}
                   </p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
                     {stat.label}
                   </p>
-                </div>
+                </Link>
               ))}
+            </div>
+
+            <div className="pt-8">
+              <Link href="/about" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-primary group">
+                Deep Dive into our Studio
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+              </Link>
             </div>
           </div>
 
-          <div className={cn("relative aspect-[4/5] bg-card border border-border overflow-hidden opacity-0", isVisible && "animate-fade-up [animation-delay:0.3s]")}>
+          <Link href="/about" className={cn("relative aspect-[4/5] bg-card border border-border overflow-hidden opacity-0 group cursor-pointer", isVisible && "animate-fade-up [animation-delay:0.3s]")}>
             <Image
               src={studioImage?.imageUrl || 'https://placehold.co/800x1000'}
               alt="Vortex Immersive Studio"
               fill
-              className="object-cover transition-transform duration-1000 hover:scale-105"
+              className="object-cover transition-transform duration-1000 group-hover:scale-105"
               data-ai-hint={studioImage?.imageHint || "tech office"}
             />
-            <div className="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none" />
-            <div className="absolute bottom-12 left-12 right-12 p-8 bg-background/80 backdrop-blur-xl border border-white/10 space-y-2">
+            <div className="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none group-hover:bg-primary/5 transition-all" />
+            <div className="absolute bottom-12 left-12 right-12 p-8 bg-background/80 backdrop-blur-xl border border-white/10 space-y-2 transition-transform group-hover:-translate-y-2">
               <p className="text-[10px] font-black uppercase tracking-widest text-primary">Est. 2007</p>
               <p className="text-sm font-bold tracking-tight">Pioneering the future of digital environments from our New York HQ.</p>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

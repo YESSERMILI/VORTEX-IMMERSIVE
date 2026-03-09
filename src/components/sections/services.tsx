@@ -1,29 +1,35 @@
+
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Layers, Monitor, ShieldCheck, PlayCircle, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const SERVICES = [
+export const SERVICES = [
   {
+    id: "projection-mapping",
     title: "Projection Mapping",
     desc: "Transform any surface into a dynamic video canvas. We create precise 3D-mapped projections for architecture, stages, and custom objects.",
     tags: ["Media Facades", "3D Mapping", "Architectural"],
     icon: <Layers className="w-8 h-8" />
   },
   {
+    id: "stage-visuals",
     title: "Stage Visuals",
     desc: "Custom-designed visual content for concerts, festivals, and corporate events. LED walls, kinetic screens, and holographic displays.",
     tags: ["Concerts", "Festivals", "LED"],
     icon: <Monitor className="w-8 h-8" />
   },
   {
+    id: "interactive-installations",
     title: "Interactive Installations",
     desc: "Engage your audience with responsive installations. Motion tracking, touch interfaces, and AI-powered experiences.",
     tags: ["Museums", "Exhibitions", "VR/AR"],
     icon: <ShieldCheck className="w-8 h-8" />
   },
   {
+    id: "content-production",
     title: "Content Production",
     desc: "High-end CGI, motion graphics, and real-time content creation. We bring stories to life with stunning visual artistry.",
     tags: ["CGI", "Motion", "Real-time"],
@@ -57,10 +63,11 @@ export const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-border border border-border">
           {SERVICES.map((s, i) => (
-            <div 
-              key={s.title}
+            <Link 
+              href={`/services/${s.id}`}
+              key={s.id}
               className={cn(
-                "group relative bg-card p-12 transition-colors hover:bg-background/50 opacity-0",
+                "group relative bg-card p-12 transition-all duration-500 hover:bg-background/80 opacity-0",
                 isVisible && "animate-fade-up"
               )}
               style={{ animationDelay: `${0.2 + i * 0.1}s` }}
@@ -68,7 +75,7 @@ export const Services = () => {
               <div className="text-primary mb-8 transition-transform duration-500 group-hover:scale-110 origin-left">
                 {s.icon}
               </div>
-              <h3 className="text-2xl font-bold font-headline mb-4">{s.title}</h3>
+              <h3 className="text-2xl font-bold font-headline mb-4 group-hover:text-primary transition-colors">{s.title}</h3>
               <p className="text-muted-foreground mb-8 text-sm leading-relaxed max-w-sm">
                 {s.desc}
               </p>
@@ -79,10 +86,10 @@ export const Services = () => {
                   </span>
                 ))}
               </div>
-              <a href="#" className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center border border-border group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+              <div className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center border border-border group-hover:bg-primary group-hover:border-primary transition-all duration-300">
                 <ArrowUpRight className="w-5 h-5 group-hover:text-primary-foreground" />
-              </a>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

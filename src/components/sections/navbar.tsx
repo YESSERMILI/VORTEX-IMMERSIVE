@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { Sun, Moon, Menu, X } from 'lucide-react';
@@ -21,11 +22,10 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Works', href: '#works' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Join Us', href: '#join' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Works', href: '/#works' },
+    { name: 'Services', href: '/#services' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -34,19 +34,19 @@ export const Navbar = () => {
       scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border h-16" : "bg-transparent h-24"
     )}>
       <div className="container mx-auto max-w-[1400px] flex items-center justify-between">
-        <a href="#" className="text-xl md:text-2xl font-black font-headline tracking-tighter">
+        <Link href="/" className="text-xl md:text-2xl font-black font-headline tracking-tighter">
           VORTEX <span className="text-primary">IMMERSIVE</span>
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-10">
           {navLinks.map(link => (
-            <a 
+            <Link 
               key={link.name} 
               href={link.href} 
               className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -71,8 +71,8 @@ export const Navbar = () => {
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
           
-          <Button className="hidden md:flex rounded-none h-10 px-6 text-xs font-bold uppercase tracking-widest">
-            Book a Demo
+          <Button className="hidden md:flex rounded-none h-10 px-6 text-xs font-bold uppercase tracking-widest" asChild>
+            <Link href="/book-a-demo">Book a Demo</Link>
           </Button>
         </div>
       </div>
@@ -84,7 +84,7 @@ export const Navbar = () => {
       )}>
         <div className="flex flex-col gap-8">
           {navLinks.map((link, i) => (
-            <a 
+            <Link 
               key={link.name} 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
@@ -92,8 +92,15 @@ export const Navbar = () => {
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
+          <Link 
+            href="/book-a-demo"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-4xl font-black font-headline tracking-tighter text-primary italic"
+          >
+            Book a Demo
+          </Link>
         </div>
         <div className="mt-auto space-y-8">
           <div className="h-px bg-border" />

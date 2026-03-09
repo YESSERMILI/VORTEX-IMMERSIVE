@@ -1,9 +1,9 @@
-
 "use client";
 
 import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import { SERVICES } from '@/components/sections/services';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';

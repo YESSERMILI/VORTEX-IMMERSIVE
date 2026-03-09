@@ -19,7 +19,7 @@ export const Hero = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const particleCount = 4000;
+    const particleCount = 2000;
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
 
@@ -28,19 +28,19 @@ export const Hero = () => {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 150;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 80;
 
-      velocities[i * 3] = (Math.random() - 0.5) * 0.02;
-      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02;
-      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.02;
+      velocities[i * 3] = (Math.random() - 0.5) * 0.015;
+      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.015;
+      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.015;
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
     const material = new THREE.PointsMaterial({
-      size: 0.4,
+      size: 0.3,
       color: 0xffffff,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.3,
       blending: THREE.AdditiveBlending
     });
 
@@ -52,7 +52,7 @@ export const Hero = () => {
       color: 0xffffff,
       wireframe: true,
       transparent: true,
-      opacity: 0.05
+      opacity: 0.03
     });
     const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere);
@@ -74,10 +74,10 @@ export const Hero = () => {
       }
 
       particleSystem.geometry.attributes.position.needsUpdate = true;
-      particleSystem.rotation.y = time * 0.05;
+      particleSystem.rotation.y = time * 0.03;
 
-      sphere.rotation.x = time * 0.1;
-      sphere.rotation.y = time * 0.15;
+      sphere.rotation.x = time * 0.05;
+      sphere.rotation.y = time * 0.08;
       
       renderer.render(scene, camera);
     };
@@ -95,7 +95,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden py-32" id="hero">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden py-32 pb-48" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
@@ -104,7 +104,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-12 font-headline max-w-4xl">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-12 font-headline max-w-5xl">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">We Create</span>
           </span>

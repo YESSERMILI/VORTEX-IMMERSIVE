@@ -40,7 +40,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
             <div className="space-y-8">
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">The Studio</span>
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-headline tracking-tighter leading-[0.85]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
                 PIONEERING <br />
                 <span className="text-primary italic">DIGITAL</span> REALMS
               </h1>

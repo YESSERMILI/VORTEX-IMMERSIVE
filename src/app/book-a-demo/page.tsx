@@ -89,7 +89,7 @@ export default function BookADemoPage() {
             <div className="lg:col-span-7 space-y-12">
               <div className="space-y-6">
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Live Session</span>
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
                   EXPERIENCE <br />
                   <span className="text-primary italic">THE FUTURE</span>
                 </h1>

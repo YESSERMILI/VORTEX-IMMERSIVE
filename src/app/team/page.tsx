@@ -7,7 +7,8 @@ import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Mail, Linkedin, Twitter, Sparkles, Code2, Globe, Zap, Cpu, Palette, Plus } from 'lucide-react';
+import { ArrowLeft, Mail, Linkedin, Twitter, Sparkles, Plus } from 'lucide-react';
+import Link from 'next/link';
 
 const TEAM_MEMBERS = [
   {
@@ -73,22 +74,6 @@ const TEAM_MEMBERS = [
     specialty: "Motion Graphics",
     tech: ["After Effects", "C4D"],
     seed: "anya"
-  },
-  {
-    name: "Lukas Weber",
-    role: "VFX Supervisor",
-    bio: "Lukas oversees the visual effects pipeline, ensuring high-fidelity output for large-scale LED volumes.",
-    specialty: "VFX Rendering",
-    tech: ["Maya", "Nuke"],
-    seed: "lukas"
-  },
-  {
-    name: "Zara Ahmed",
-    role: "Experience Strategist",
-    bio: "Zara bridge the gap between brand narrative and physical experience through strategic audience engagement.",
-    specialty: "Strategic UX",
-    tech: ["Research", "Strategy"],
-    seed: "zara"
   }
 ];
 
@@ -128,7 +113,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Team Grid - Scrollable vertical list */}
+      {/* Team Grid */}
       <section className="py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-20">
@@ -178,15 +163,15 @@ export default function TeamPage() {
             ))}
             
             {/* Join Us Card */}
-            <div className="group border border-dashed border-border p-12 flex flex-col items-center justify-center text-center gap-6 hover:border-primary transition-colors cursor-pointer">
+            <Link href="/join" className="group border border-dashed border-border p-12 flex flex-col items-center justify-center text-center gap-6 hover:border-primary transition-colors cursor-pointer bg-card/20 aspect-[3/4] h-full">
                <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all">
                   <Plus className="w-6 h-6 group-hover:text-primary-foreground" />
                </div>
-               <div className="space-y-2">
-                 <h4 className="text-xl font-black font-headline uppercase tracking-tighter">Join the Collective</h4>
+               <div className="space-y-4">
+                 <h4 className="text-2xl font-black font-headline uppercase tracking-tighter leading-none">Join the <br />Collective</h4>
                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest italic">We are always seeking visionaries.</p>
                </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

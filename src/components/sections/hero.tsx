@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useRef } from 'react';
@@ -95,39 +96,39 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden py-32 pb-24" id="hero">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-48 pb-24" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
-        <div className="flex items-center gap-4 text-xs font-bold tracking-[0.2em] text-muted-foreground uppercase mb-8 animate-fade-up">
+        <div className="flex items-center gap-4 text-[10px] font-black tracking-[0.4em] text-muted-foreground uppercase mb-8 animate-fade-up">
           <div className="w-10 h-px bg-primary" />
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-12 font-headline max-w-5xl">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.9] mb-12 font-headline max-w-5xl">
           <span className="block overflow-hidden">
-            <span className="inline-block animate-title-reveal">We Create</span>
+            <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>
           <span className="block overflow-hidden">
-            <span className="inline-block animate-title-reveal [animation-delay:0.1s]">Immersive</span>
+            <span className="inline-block animate-title-reveal [animation-delay:0.1s]">IMMERSIVE</span>
           </span>
           <span className="block overflow-hidden">
-            <span className="inline-block animate-title-reveal [animation-delay:0.2s] text-primary">Experiences</span>
+            <span className="inline-block animate-title-reveal [animation-delay:0.2s] text-primary italic">EXPERIENCES</span>
           </span>
         </h1>
         
         <p className="max-w-lg text-lg text-muted-foreground leading-relaxed mb-16 animate-fade-up [animation-delay:0.4s]">
-          Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles that captivate audiences worldwide.
+          Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles.
         </p>
         
         <div className="flex flex-wrap gap-6 animate-fade-up [animation-delay:0.6s]">
-          <Button size="lg" className="h-16 px-10 rounded-none group text-sm font-bold uppercase tracking-widest" asChild>
+          <Button size="lg" className="h-16 px-10 rounded-none group text-xs font-bold uppercase tracking-widest" asChild>
             <a href="#works">
               Explore Works
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
-          <Button variant="outline" size="lg" className="h-16 px-10 rounded-none text-sm font-bold uppercase tracking-widest" asChild>
+          <Button variant="outline" size="lg" className="h-16 px-10 rounded-none text-xs font-bold uppercase tracking-widest" asChild>
             <a href="#contact">Get in Touch</a>
           </Button>
         </div>

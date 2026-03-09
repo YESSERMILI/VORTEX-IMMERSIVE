@@ -37,17 +37,19 @@ export default function AboutPage() {
             Return Home
           </Button>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
-            <div className="space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-8 space-y-8">
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">The Studio</span>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-[0.95] uppercase">
                 PIONEERING <br />
                 <span className="text-primary italic">DIGITAL</span> REALMS
               </h1>
             </div>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mb-4">
-              Founded in 2007, Vortex Immersive was born from the intersection of architectural mapping and experimental interactive media.
-            </p>
+            <div className="lg:col-span-4 mt-8 lg:mt-16">
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-sm">
+                Founded in 2007, Vortex Immersive was born from the intersection of architectural mapping and experimental interactive media.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -77,7 +79,7 @@ export default function AboutPage() {
       {/* Detailed Content */}
       <section className="py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 xl:gap-32">
             <div className="relative aspect-[4/5] border border-border overflow-hidden">
               <Image 
                 src={mainImage?.imageUrl || 'https://placehold.co/800x1000'} 

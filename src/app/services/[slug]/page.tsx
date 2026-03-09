@@ -137,7 +137,7 @@ export default function ServiceDetailPage() {
           </Button>
           <div className="space-y-4">
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Specialized Discipline</span>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.85] uppercase max-w-4xl">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-[0.85] uppercase max-w-4xl">
               {service.title.split(' ')[0]} <br />
               <span className="text-primary italic">{service.title.split(' ').slice(1).join(' ')}</span>
             </h1>
@@ -245,27 +245,27 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Conversion Section */}
-      <section className="py-24">
+      {/* Conversion Section - Fixed Colors and Inversed Text */}
+      <section className="py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-primary p-12 md:p-20 text-primary-foreground relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 -translate-y-1/2 translate-x-1/2 rounded-full blur-[100px]" />
-            <div className="max-w-3xl space-y-10 relative z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-headline tracking-tighter uppercase leading-[0.85]">
+          <div className="bg-foreground p-12 md:p-24 text-background relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-background/5 -translate-y-1/2 translate-x-1/2 rounded-full blur-[100px]" />
+            <div className="max-w-3xl space-y-12 relative z-10">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter uppercase leading-[0.9]">
                 Initiate Your <br />
                 <span className="italic">Digital Transformation</span>
               </h2>
-              <p className="text-primary-foreground/70 text-base md:text-lg max-w-xl italic leading-relaxed">
+              <p className="text-background/70 text-lg md:text-xl max-w-xl italic leading-relaxed">
                 Our directors are available to discuss technical feasibility and creative scope for your upcoming installation or event.
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button variant="secondary" className="rounded-none h-14 px-10 group text-[9px] font-black uppercase tracking-widest" asChild>
+              <div className="flex flex-wrap gap-6 pt-6">
+                <Button variant="outline" className="rounded-none h-16 px-10 group bg-background text-foreground hover:bg-background/90 transition-all border-transparent text-[10px] font-bold uppercase tracking-[0.2em]" asChild>
                   <Link href="/book-a-demo">
                     Schedule Technical Consultation
                     <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="rounded-none h-14 px-10 border-white/20 hover:bg-white/10 text-[9px] font-black uppercase tracking-widest" asChild>
+                <Button variant="outline" className="rounded-none h-16 px-10 border-background/20 hover:bg-background/10 text-background text-[10px] font-bold uppercase tracking-[0.2em]" asChild>
                   <Link href="/#contact">Send Project Brief</Link>
                 </Button>
               </div>
@@ -278,3 +278,4 @@ export default function ServiceDetailPage() {
     </main>
   );
 }
+

@@ -10,7 +10,6 @@ import { Button } from '@/components/ui/button';
 import { 
   ArrowLeft, 
   ArrowRight, 
-  CheckCircle2, 
   Cpu, 
   Layers, 
   Search, 
@@ -22,7 +21,8 @@ import {
   Palette,
   Target,
   Workflow,
-  Sparkles
+  Sparkles,
+  Play
 } from 'lucide-react';
 import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
@@ -116,15 +116,16 @@ export default function ServiceDetailPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-end pb-24 overflow-hidden border-b border-border">
+      <section className="relative h-[80vh] flex items-end pb-24 overflow-hidden border-b border-border">
         <Image 
           src={imageData.imageUrl} 
           alt={service.title} 
           fill 
           priority
-          className="object-cover opacity-20 grayscale scale-105"
+          className="object-cover opacity-30 grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px] relative z-10">
           <Button 
             variant="ghost" 
@@ -145,7 +146,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Deep Dive Narrative */}
-      <section className="py-24 md:py-32 border-b border-border bg-card">
+      <section className="py-32 border-b border-border bg-card">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32 items-start">
             <div className="lg:col-span-8 space-y-12">
@@ -198,7 +199,7 @@ export default function ServiceDetailPage() {
       {/* Workflow Section */}
       <section className="py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
             <div className="space-y-4">
                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Methodology</span>
                <h2 className="text-4xl font-black font-headline tracking-tighter uppercase">Our <span className="italic">Workflow</span></h2>
@@ -221,28 +222,51 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Conversion Section */}
-      <section className="py-24 bg-card border-y border-border overflow-hidden">
+      {/* Showcase Visual */}
+      <section className="py-32 bg-card border-y border-border overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-primary p-12 md:p-20 text-primary-foreground relative">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 -translate-y-1/2 translate-x-1/2 rounded-full blur-3xl" />
-            <div className="max-w-3xl space-y-10 relative z-10">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter uppercase leading-[0.9]">
+          <div className="relative aspect-[21/9] bg-background border border-border group cursor-pointer overflow-hidden">
+             <Image 
+                src={imageData.imageUrl} 
+                alt="Experience Preview" 
+                fill 
+                className="object-cover opacity-60 transition-transform duration-[2s] group-hover:scale-105"
+             />
+             <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-24 h-24 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 fill-white stroke-none ml-1" />
+                </div>
+             </div>
+             <div className="absolute bottom-8 left-8 p-6 bg-background/80 backdrop-blur-xl border border-white/10 space-y-1">
+                <p className="text-[9px] uppercase font-bold tracking-widest text-primary">Recent Project</p>
+                <p className="text-lg font-black tracking-tighter uppercase font-headline">Global Tech Pavilion '24</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Conversion Section */}
+      <section className="py-32">
+        <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+          <div className="bg-primary p-12 md:p-24 text-primary-foreground relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/5 -translate-y-1/2 translate-x-1/2 rounded-full blur-[120px]" />
+            <div className="max-w-3xl space-y-12 relative z-10">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-black font-headline tracking-tighter uppercase leading-[0.85]">
                 Initiate Your <br />
                 <span className="italic">Digital Transformation</span>
               </h2>
-              <p className="text-primary-foreground/70 text-lg max-w-xl italic">
+              <p className="text-primary-foreground/70 text-lg md:text-xl max-w-xl italic leading-relaxed">
                 Our directors are available to discuss technical feasibility and creative scope for your upcoming installation or event.
               </p>
-              <div className="flex flex-wrap gap-6 pt-4">
-                <Button variant="secondary" className="rounded-none h-16 px-10 group text-xs font-black uppercase tracking-widest" asChild>
+              <div className="flex flex-wrap gap-6 pt-6">
+                <Button variant="secondary" className="rounded-none h-16 px-12 group text-[10px] font-black uppercase tracking-widest" asChild>
                   <Link href="/book-a-demo">
-                    Book a Technical Consultation
+                    Schedule Technical Consultation
                     <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="rounded-none h-16 px-10 border-white/20 hover:bg-white/10 text-xs font-black uppercase tracking-widest" asChild>
-                  <Link href="/#contact">Send Brief</Link>
+                <Button variant="outline" className="rounded-none h-16 px-12 border-white/20 hover:bg-white/10 text-[10px] font-black uppercase tracking-widest" asChild>
+                  <Link href="/#contact">Send Project Brief</Link>
                 </Button>
               </div>
             </div>

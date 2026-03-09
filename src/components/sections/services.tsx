@@ -52,12 +52,12 @@ export const Services = () => {
   return (
     <section className="py-32 bg-card border-y border-border" id="services">
       <div id="services-section" className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-        <div className={cn("max-w-3xl mb-16 opacity-0", isVisible && "animate-fade-up")}>
+        <div className={cn("max-w-3xl mb-24 opacity-0", isVisible && "animate-fade-up")}>
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6 block">Our Capabilities</span>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-8 font-headline uppercase leading-none">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-8 font-headline uppercase leading-none">
             Digital <span className="text-primary italic">Spectacles</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed italic">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed italic">
             We combine artistic vision with technical mastery to deliver experiences that transcend the ordinary. From concept to execution, we handle every aspect of your project with precision.
           </p>
         </div>
@@ -68,28 +68,31 @@ export const Services = () => {
               href={`/services/${s.id}`}
               key={s.id}
               className={cn(
-                "group relative bg-card p-12 transition-all duration-500 hover:bg-background/80 opacity-0 block",
+                "group relative bg-card p-12 transition-all duration-500 hover:bg-background/80 opacity-0 block overflow-hidden",
                 isVisible && "animate-fade-up"
               )}
               style={{ animationDelay: `${0.2 + i * 0.1}s` }}
             >
-              <div className="text-primary mb-8 transition-transform duration-500 group-hover:scale-110 origin-left">
+              <div className="text-primary mb-12 transition-transform duration-500 group-hover:scale-110 origin-left">
                 {s.icon}
               </div>
-              <h3 className="text-xl font-bold font-headline mb-4 group-hover:text-primary transition-colors uppercase tracking-tight">{s.title}</h3>
-              <p className="text-muted-foreground mb-8 text-xs leading-relaxed max-w-sm italic">
+              <h3 className="text-2xl font-bold font-headline mb-4 group-hover:text-primary transition-colors uppercase tracking-tight">{s.title}</h3>
+              <p className="text-muted-foreground mb-12 text-sm leading-relaxed max-w-sm italic">
                 {s.desc}
               </p>
-              <div className="flex flex-wrap gap-2 mb-12">
+              <div className="flex flex-wrap gap-2 mb-16">
                 {s.tags.map(tag => (
                   <span key={tag} className="text-[9px] font-black uppercase tracking-widest border border-border px-3 py-1 text-muted-foreground group-hover:border-primary group-hover:text-primary transition-colors">
                     {tag}
                   </span>
                 ))}
               </div>
-              <div className="absolute top-8 right-8 w-10 h-10 flex items-center justify-center border border-border group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                <ArrowUpRight className="w-4 h-4 group-hover:text-primary-foreground" />
+              <div className="absolute top-12 right-12 w-12 h-12 flex items-center justify-center border border-border group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                <ArrowUpRight className="w-5 h-5 group-hover:text-primary-foreground" />
               </div>
+              
+              {/* Creative background reveal on hover */}
+              <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700 pointer-events-none" />
             </Link>
           ))}
         </div>

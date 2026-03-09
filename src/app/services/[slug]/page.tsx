@@ -30,7 +30,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const SERVICE_CONTENT: Record<string, any> = {
   "projection-mapping": {
-    longDesc: "Projection mapping is at the heart of VORTEX IMMERSIVE. We transform static architecture into living, breathing canvases. Using sub-millimeter precision, we map complex 3D surfaces to create narratives that defy physics and engage audiences on a massive scale.",
+    longDesc: "Projection mapping is at the heart of VORTEX IMMERSIVE. We transform static architecture into living, breathing canvases. Using sub-millimeter precision, we map complex 3D surfaces to create narratives that defy physics and engage audiences on a massive scale. Our expertise ranges from historical monument mapping to stadium-sized spectacles.",
     process: [
       { step: "01", title: "Geometric Analysis", desc: "LiDAR scanning and photogrammetry to create a perfect digital twin of the target surface." },
       { step: "02", title: "Narrative Sculpting", desc: "3D animators craft visuals that respect and enhance the unique topology of the site." },
@@ -45,7 +45,7 @@ const SERVICE_CONTENT: Record<string, any> = {
     image: 'work-1'
   },
   "stage-visuals": {
-    longDesc: "We design visual ecosystems for the world's most demanding performers. Our stage visuals are not just backgrounds; they are reactive, kinetic environments that sync with every beat, breath, and light cue in a performance.",
+    longDesc: "We design visual ecosystems for the world's most demanding performers. Our stage visuals are not just backgrounds; they are reactive, kinetic environments that sync with every beat, breath, and light cue in a performance. We bridge the gap between music and visual storytelling.",
     process: [
       { step: "01", title: "Creative Blueprint", desc: "Establishing the visual language and mood-boards aligned with the artist's brand." },
       { step: "02", title: "Real-time Rigging", desc: "Building interactive Notch or TouchDesigner patches for live audio-reactive visuals." },
@@ -60,7 +60,7 @@ const SERVICE_CONTENT: Record<string, any> = {
     image: 'work-2'
   },
   "interactive-installations": {
-    longDesc: "Interactive installations bridge the gap between human intuition and digital possibility. We create spaces where visitors don't just watch—they participate. From motion-tracked galleries to AI-driven pavilions, we build memories.",
+    longDesc: "Interactive installations bridge the gap between human intuition and digital possibility. We create spaces where visitors don't just watch—they participate. From motion-tracked galleries to AI-driven pavilions, we build memories that last a lifetime.",
     process: [
       { step: "01", title: "Experience Design", desc: "Defining the user journey and the 'magic moment' of interaction." },
       { step: "02", title: "Sensor Prototyping", desc: "Testing LiDAR, IR cameras, and ultrasonic sensors for precise movement detection." },
@@ -75,7 +75,7 @@ const SERVICE_CONTENT: Record<string, any> = {
     image: 'work-4'
   },
   "content-production": {
-    longDesc: "Content is our foundation. We produce high-fidelity CGI and real-time graphics tailored specifically for large-scale displays. We understand how pixels behave on 100-meter facades and stadium screens.",
+    longDesc: "Content is our foundation. We produce high-fidelity CGI and real-time graphics tailored specifically for large-scale displays. We understand how pixels behave on 100-meter facades and stadium screens, ensuring every frame is optimized for the viewer.",
     process: [
       { step: "01", title: "Storyboarding", desc: "Translating brand goals into a cinematic narrative arc." },
       { step: "02", title: "Look Development", desc: "Creating custom shaders, lighting, and materials for specific display technologies." },
@@ -116,26 +116,26 @@ export default function ServiceDetailPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-end pb-24 overflow-hidden border-b border-border">
+      <section className="relative h-[70vh] flex items-end pb-20 overflow-hidden border-b border-border">
         <Image 
           src={imageData.imageUrl} 
           alt={service.title} 
           fill 
           priority
-          className="object-cover opacity-30 grayscale"
+          className="object-cover opacity-20 grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px] relative z-10">
           <Button 
             variant="ghost" 
-            className="mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2"
+            className="mb-10 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2"
             onClick={() => router.push('/#services')}
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Capabilities
           </Button>
-          <div className="space-y-6">
+          <div className="space-y-4">
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Specialized Discipline</span>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.85] uppercase max-w-4xl">
               {service.title.split(' ')[0]} <br />
@@ -146,34 +146,34 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Deep Dive Narrative */}
-      <section className="py-32 border-b border-border bg-card">
+      <section className="py-24 border-b border-border bg-card">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32 items-start">
-            <div className="lg:col-span-8 space-y-12">
+            <div className="lg:col-span-8 space-y-10">
               <div className="flex gap-4 items-center">
-                 <div className="w-12 h-[1px] bg-primary" />
+                 <div className="w-10 h-[1px] bg-primary" />
                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground">The Vision</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tighter uppercase leading-tight">
+              <h2 className="text-2xl md:text-3xl font-black font-headline tracking-tighter uppercase leading-tight">
                 Engineering <span className="text-primary italic">Awe</span> Through Technical Precision
               </h2>
-              <div className="space-y-8 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl italic">
+              <div className="space-y-8 text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl italic">
                 <p>{content.longDesc}</p>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                 {service.tags.map(tag => (
                   <div key={tag} className="flex items-center gap-4 group cursor-default">
                     <div className="w-10 h-10 flex items-center justify-center border border-border group-hover:border-primary group-hover:bg-primary/5 transition-all">
                       <Target className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-widest">{tag}</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest">{tag}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="lg:col-span-4 space-y-12">
+            <div className="lg:col-span-4 space-y-10">
                <div className="bg-background p-10 border border-border space-y-8 relative overflow-hidden">
                  <div className="absolute top-0 right-0 p-4">
                    <Sparkles className="w-4 h-4 text-primary/20" />
@@ -184,9 +184,9 @@ export default function ServiceDetailPage() {
                     <div key={i} className="space-y-2">
                       <div className="flex items-center gap-3">
                         <div className="text-primary">{item.icon}</div>
-                        <p className="text-[10px] uppercase font-black text-muted-foreground tracking-widest">{item.label}</p>
+                        <p className="text-[9px] uppercase font-black text-muted-foreground tracking-widest">{item.label}</p>
                       </div>
-                      <p className="text-sm font-bold tracking-tight pl-8 border-l border-border">{item.detail}</p>
+                      <p className="text-xs font-bold tracking-tight pl-8 border-l border-border">{item.detail}</p>
                     </div>
                   ))}
                  </div>
@@ -197,25 +197,25 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Workflow Section */}
-      <section className="py-32">
+      <section className="py-24">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
-            <div className="space-y-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+            <div className="space-y-3">
                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Methodology</span>
-               <h2 className="text-4xl font-black font-headline tracking-tighter uppercase">Our <span className="italic">Workflow</span></h2>
+               <h2 className="text-3xl font-black font-headline tracking-tighter uppercase">Our <span className="italic">Workflow</span></h2>
             </div>
-            <p className="text-muted-foreground max-w-sm text-sm">A rigorous, multi-phase approach ensuring every project is delivered with sub-pixel accuracy and emotional resonance.</p>
+            <p className="text-muted-foreground max-w-sm text-xs leading-relaxed">A rigorous, multi-phase approach ensuring every project is delivered with sub-pixel accuracy and emotional resonance.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {content.process.map((item: any) => (
               <div key={item.step} className="group p-10 bg-card border border-border hover:border-primary transition-all duration-500 relative">
-                <div className="text-5xl font-black font-headline text-primary/10 mb-8 transition-colors group-hover:text-primary/20">
+                <div className="text-4xl font-black font-headline text-primary/10 mb-6 transition-colors group-hover:text-primary/20">
                   {item.step}
                 </div>
-                <h4 className="font-bold text-base uppercase tracking-tight mb-4">{item.title}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed italic">{item.desc}</p>
-                <Workflow className="absolute bottom-8 right-8 w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
+                <h4 className="font-bold text-sm uppercase tracking-tight mb-3">{item.title}</h4>
+                <p className="text-[10px] text-muted-foreground leading-relaxed italic">{item.desc}</p>
+                <Workflow className="absolute bottom-6 right-6 w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
               </div>
             ))}
           </div>
@@ -223,49 +223,49 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Showcase Visual */}
-      <section className="py-32 bg-card border-y border-border overflow-hidden">
+      <section className="py-24 bg-card border-y border-border overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="relative aspect-[21/9] bg-background border border-border group cursor-pointer overflow-hidden">
              <Image 
                 src={imageData.imageUrl} 
                 alt="Experience Preview" 
                 fill 
-                className="object-cover opacity-60 transition-transform duration-[2s] group-hover:scale-105"
+                className="object-cover opacity-40 transition-transform duration-[2s] group-hover:scale-105"
              />
              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 fill-white stroke-none ml-1" />
+                <div className="w-20 h-20 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Play className="w-6 h-6 fill-white stroke-none ml-1" />
                 </div>
              </div>
-             <div className="absolute bottom-8 left-8 p-6 bg-background/80 backdrop-blur-xl border border-white/10 space-y-1">
-                <p className="text-[9px] uppercase font-bold tracking-widest text-primary">Recent Project</p>
-                <p className="text-lg font-black tracking-tighter uppercase font-headline">Global Tech Pavilion '24</p>
+             <div className="absolute bottom-6 left-6 p-6 bg-background/80 backdrop-blur-xl border border-white/10 space-y-1">
+                <p className="text-[8px] uppercase font-bold tracking-widest text-primary">Recent Project</p>
+                <p className="text-base font-black tracking-tighter uppercase font-headline">Global Tech Pavilion '24</p>
              </div>
           </div>
         </div>
       </section>
 
       {/* Conversion Section */}
-      <section className="py-32">
+      <section className="py-24">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-primary p-12 md:p-24 text-primary-foreground relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/5 -translate-y-1/2 translate-x-1/2 rounded-full blur-[120px]" />
-            <div className="max-w-3xl space-y-12 relative z-10">
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-black font-headline tracking-tighter uppercase leading-[0.85]">
+          <div className="bg-primary p-12 md:p-20 text-primary-foreground relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 -translate-y-1/2 translate-x-1/2 rounded-full blur-[100px]" />
+            <div className="max-w-3xl space-y-10 relative z-10">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-headline tracking-tighter uppercase leading-[0.85]">
                 Initiate Your <br />
                 <span className="italic">Digital Transformation</span>
               </h2>
-              <p className="text-primary-foreground/70 text-lg md:text-xl max-w-xl italic leading-relaxed">
+              <p className="text-primary-foreground/70 text-base md:text-lg max-w-xl italic leading-relaxed">
                 Our directors are available to discuss technical feasibility and creative scope for your upcoming installation or event.
               </p>
-              <div className="flex flex-wrap gap-6 pt-6">
-                <Button variant="secondary" className="rounded-none h-16 px-12 group text-[10px] font-black uppercase tracking-widest" asChild>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Button variant="secondary" className="rounded-none h-14 px-10 group text-[9px] font-black uppercase tracking-widest" asChild>
                   <Link href="/book-a-demo">
                     Schedule Technical Consultation
                     <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="rounded-none h-16 px-12 border-white/20 hover:bg-white/10 text-[10px] font-black uppercase tracking-widest" asChild>
+                <Button variant="outline" className="rounded-none h-14 px-10 border-white/20 hover:bg-white/10 text-[9px] font-black uppercase tracking-widest" asChild>
                   <Link href="/#contact">Send Project Brief</Link>
                 </Button>
               </div>

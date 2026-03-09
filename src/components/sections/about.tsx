@@ -36,7 +36,7 @@ export const About = () => {
           <div className={cn("space-y-12 opacity-0", isVisible && "animate-fade-up")}>
             <div className="space-y-4">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">About Us</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-none">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-none">
                 Where <span className="text-primary italic">Art</span> Meets Tech
               </h2>
             </div>

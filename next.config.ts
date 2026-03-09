@@ -9,12 +9,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   transpilePackages: ['three'],
-  experimental: {
-    allowedDevOrigins: [
-      '6000-firebase-studio-1773090979638.cluster-fbfjltn375c6wqxlhoehbz44sk.cloudworkstations.dev',
-      '*.cloudworkstations.dev'
-    ]
-  },
   images: {
     remotePatterns: [
       {

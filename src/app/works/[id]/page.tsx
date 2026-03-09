@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -107,7 +106,7 @@ export default function WorkDetailPage() {
                   src={imageData.imageUrl} 
                   alt="Process" 
                   fill 
-                  className="object-cover opacity-70 transition-transform duration-[2s] group-hover:scale-105"
+                  className="object-cover opacity-70 transition-transform duration-[2000ms] group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="w-24 h-24 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">

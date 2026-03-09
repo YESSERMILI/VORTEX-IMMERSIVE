@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "work-1",
+      "description": "World Cup Opening Ceremony",
+      "imageUrl": "https://picsum.photos/seed/vortex1/1200/800",
+      "imageHint": "stadium spectacle"
+    },
+    {
+      "id": "work-2",
+      "description": "Electric Symphony World Tour",
+      "imageUrl": "https://picsum.photos/seed/vortex2/1200/800",
+      "imageHint": "concert visuals"
+    },
+    {
+      "id": "work-3",
+      "description": "Future Tech Summit",
+      "imageUrl": "https://picsum.photos/seed/vortex3/1200/800",
+      "imageHint": "hologram technology"
+    },
+    {
+      "id": "work-4",
+      "description": "Digital Ocean Pavilion",
+      "imageUrl": "https://picsum.photos/seed/vortex4/1200/800",
+      "imageHint": "interactive art"
+    },
+    {
+      "id": "work-5",
+      "description": "Aurora Borealis Experience",
+      "imageUrl": "https://picsum.photos/seed/vortex5/1200/800",
+      "imageHint": "light installation"
+    },
+    {
+      "id": "work-6",
+      "description": "Global Brand Summit",
+      "imageUrl": "https://picsum.photos/seed/vortex6/1200/800",
+      "imageHint": "architectural mapping"
+    },
+    {
+      "id": "about-studio",
+      "description": "Vortex Immersive Studio",
+      "imageUrl": "https://picsum.photos/seed/studio/800/1000",
+      "imageHint": "creative studio"
+    }
+  ]
 }

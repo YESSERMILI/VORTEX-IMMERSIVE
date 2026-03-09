@@ -25,7 +25,6 @@ import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-// Extended details for each service to make pages "rich"
 const SERVICE_CONTENT: Record<string, any> = {
   "projection-mapping": {
     process: [
@@ -93,8 +92,8 @@ export default function ServiceDetailPage() {
 
   if (!service || !content) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center space-y-4">
+      <div className="min-h-screen flex items-center justify-center bg-background text-center p-6">
+        <div className="space-y-4">
           <h1 className="text-3xl font-black font-headline uppercase">Service Not Found</h1>
           <Button variant="outline" onClick={() => router.push('/')}>Return Home</Button>
         </div>
@@ -129,7 +128,7 @@ export default function ServiceDetailPage() {
           </Button>
           <div className="space-y-6">
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Specialized Solutions</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.9] uppercase max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-[0.9] uppercase max-w-4xl">
               {service.title.split(' ')[0]} <br />
               <span className="text-primary italic">{service.title.split(' ').slice(1).join(' ')}</span>
             </h1>
@@ -144,7 +143,7 @@ export default function ServiceDetailPage() {
             <div className="lg:col-span-7 space-y-12">
               <div className="space-y-8">
                 <h2 className="text-2xl md:text-3xl font-black font-headline tracking-tight uppercase">Elevating the <span className="text-primary">Standard</span></h2>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
                   {service.desc} Our approach blends engineering precision with pure artistic expression, ensuring every frame tells a story that resonates.
                 </p>
               </div>
@@ -225,7 +224,7 @@ export default function ServiceDetailPage() {
             />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                <div className="text-center space-y-4 px-6 max-w-2xl">
-                 <h2 className="text-3xl md:text-5xl font-black font-headline uppercase text-white tracking-tighter">Precision in <span className="text-primary">Execution</span></h2>
+                 <h2 className="text-3xl md:text-4xl font-black font-headline uppercase text-white tracking-tighter">Precision in <span className="text-primary">Execution</span></h2>
                  <p className="text-white/80 text-sm md:text-base italic">Every pixel, every millisecond, perfectly synchronized to create wonder.</p>
                </div>
             </div>

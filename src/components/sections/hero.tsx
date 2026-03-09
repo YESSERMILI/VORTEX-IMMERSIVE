@@ -96,7 +96,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-48 pb-24" id="hero">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-48 pb-12" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
@@ -105,7 +105,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.9] mb-12 font-headline max-w-5xl">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.9] mb-12 font-headline max-w-5xl">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>

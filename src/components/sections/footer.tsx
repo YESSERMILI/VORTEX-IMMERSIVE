@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -32,8 +33,10 @@ export const Footer = () => {
               <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all">
                 <Twitter className="w-4 h-4" />
               </Button>
-              <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all">
-                <Github className="w-4 h-4" />
+              <Button variant="outline" size="icon" className="rounded-none border-border hover:bg-primary hover:text-primary-foreground transition-all" asChild>
+                <a href="https://github.com/vorteximmersive/vortex-studio" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-4 h-4" />
+                </a>
               </Button>
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -30,51 +29,51 @@ export const About = () => {
   }, []);
 
   return (
-    <section className="py-32 bg-background overflow-hidden" id="about">
+    <section className="py-20 md:py-32 bg-background overflow-hidden" id="about">
       <div id="about-section" className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
-          <div className={cn("space-y-12 opacity-0", isVisible && "animate-fade-up")}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-32 items-center">
+          <div className={cn("space-y-8 md:space-y-12 opacity-0", isVisible && "animate-fade-up")}>
             <div className="space-y-4">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">About Us</span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-none">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-tight uppercase">
                 Where <span className="text-primary italic">Art</span> Meets Tech
               </h2>
             </div>
             
-            <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-base md:text-lg">
               <p>
                 We are a global collective of designers, engineers, and visionaries dedicated to pushing the boundaries of what&apos;s possible. Our work transforms ordinary spaces into extraordinary experiences.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-6 md:gap-8">
               {STATS.map(stat => (
-                <div key={stat.id} className="space-y-2 group">
-                  <p className="text-4xl md:text-5xl font-black font-headline tracking-tighter transition-all group-hover:text-primary group-hover:translate-x-1">
+                <div key={stat.id} className="space-y-1 md:space-y-2 group">
+                  <p className="text-3xl md:text-5xl font-black font-headline tracking-tighter transition-all group-hover:text-primary group-hover:translate-x-1">
                     {stat.value}
                   </p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
+                  <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
                     {stat.label}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-6 pt-8">
-              <Button className="rounded-none h-14 px-8 group text-[10px] font-black uppercase tracking-[0.2em]" asChild>
+            <div className="flex flex-wrap gap-4 md:gap-6 pt-4 md:pt-8">
+              <Button className="rounded-none h-12 md:h-14 px-6 md:px-8 group text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em]" asChild>
                 <Link href="/team">
                   Meet the Collective
-                  <Users className="ml-2 w-4 h-4 transition-transform group-hover:scale-110" />
+                  <Users className="ml-2 w-3.5 h-3.5 md:w-4 md:h-4 transition-transform group-hover:scale-110" />
                 </Link>
               </Button>
-              <Link href="/about" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-primary group self-center">
+              <Link href="/about" className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-primary group self-center">
                 Studio Philosophy
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
               </Link>
             </div>
           </div>
 
-          <Link href="/about" className={cn("relative aspect-[4/5] bg-card border border-border overflow-hidden opacity-0 group cursor-pointer", isVisible && "animate-fade-up [animation-delay:0.3s]")}>
+          <Link href="/about" className={cn("relative aspect-[4/5] bg-card border border-border overflow-hidden opacity-0 group cursor-pointer hidden md:block", isVisible && "animate-fade-up [animation-delay:0.3s]")}>
             <Image
               src={studioImage?.imageUrl || 'https://placehold.co/800x1000'}
               alt="Vortex Immersive Studio"

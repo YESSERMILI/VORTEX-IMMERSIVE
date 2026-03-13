@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -21,7 +20,6 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -89,16 +87,19 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={cn(
-        "fixed inset-0 bg-background/98 backdrop-blur-xl z-[999] transition-all duration-500 ease-in-out flex flex-col p-8 md:p-12 lg:hidden",
+        "fixed inset-0 bg-background z-[999] transition-all duration-500 ease-in-out flex flex-col p-8 md:p-12 lg:hidden",
         mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
-        <div className="flex flex-col gap-6 md:gap-8 pt-24">
+        {/* Solid background for blur stability */}
+        <div className="absolute inset-0 bg-background/95 backdrop-blur-2xl pointer-events-none" />
+        
+        <div className="relative flex flex-col gap-4 md:gap-8 pt-24">
           {navLinks.map((link, i) => (
             <Link 
               key={link.name} 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-4xl md:text-6xl font-black font-headline tracking-tighter hover:text-primary transition-colors uppercase"
+              className="text-3xl md:text-5xl font-black font-headline tracking-tighter hover:text-primary transition-colors uppercase leading-tight"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               {link.name}
@@ -107,16 +108,17 @@ export const Navbar = () => {
           <Link 
             href="/book-a-demo"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-4xl md:text-6xl font-black font-headline tracking-tighter text-primary italic uppercase"
+            className="text-3xl md:text-5xl font-black font-headline tracking-tighter text-primary italic uppercase leading-tight"
           >
             Book a Demo
           </Link>
         </div>
-        <div className="mt-auto space-y-6 pt-12">
+        
+        <div className="relative mt-auto space-y-6 pt-12">
           <div className="h-px bg-border" />
           <div className="space-y-1">
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Connect</p>
-            <p className="text-lg font-bold">hello@vorteximmersive.com</p>
+            <p className="text-base font-bold">hello@vorteximmersive.com</p>
           </div>
         </div>
       </div>

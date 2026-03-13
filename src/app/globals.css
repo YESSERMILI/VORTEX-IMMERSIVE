@@ -63,15 +63,9 @@
   }
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.font-headline {
+  line-height: 1.1;
+  padding-bottom: 0.05em;
 }
 
 ::selection {
@@ -84,12 +78,6 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-/* Fix for mobile text clipping in Syne font */
-.font-headline {
-  line-height: 1.1;
-  padding-bottom: 0.05em;
 }
 
 @keyframes marquee {

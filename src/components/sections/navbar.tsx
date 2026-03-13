@@ -42,7 +42,7 @@ export const Navbar = () => {
       scrolled ? "bg-background/95 backdrop-blur-md border-b border-border h-16" : "bg-transparent h-20 md:h-24"
     )}>
       <div className="container mx-auto max-w-[1400px] flex items-center justify-between">
-        <Link href="/" className="text-lg md:text-2xl font-black font-headline tracking-tighter z-[1001]" onClick={() => setMobileMenuOpen(false)}>
+        <Link href="/" className="text-lg md:text-2xl font-black font-headline tracking-tighter z-[10001]" onClick={() => setMobileMenuOpen(false)}>
           VORTEX <span className="text-primary">IMMERSIVE</span>
         </Link>
 
@@ -58,7 +58,7 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 md:gap-4 z-[1001]">
+        <div className="flex items-center gap-2 md:gap-4 z-[10001]">
           <Button
             variant="ghost"
             size="icon"
@@ -87,19 +87,16 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={cn(
-        "fixed inset-0 bg-background z-[999] transition-all duration-500 ease-in-out flex flex-col p-8 md:p-12 lg:hidden",
+        "fixed inset-0 bg-background/98 backdrop-blur-3xl z-[9999] transition-all duration-500 ease-in-out flex flex-col p-8 pt-32 lg:hidden",
         mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
-        {/* Solid background for blur stability */}
-        <div className="absolute inset-0 bg-background/95 backdrop-blur-2xl pointer-events-none" />
-        
-        <div className="relative flex flex-col gap-4 md:gap-8 pt-24">
+        <div className="flex flex-col gap-6 md:gap-8 overflow-y-auto no-scrollbar">
           {navLinks.map((link, i) => (
             <Link 
               key={link.name} 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-3xl md:text-5xl font-black font-headline tracking-tighter hover:text-primary transition-colors uppercase leading-tight"
+              className="text-3xl md:text-5xl font-black font-headline tracking-tighter hover:text-primary transition-colors uppercase leading-[1.1]"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               {link.name}
@@ -108,13 +105,13 @@ export const Navbar = () => {
           <Link 
             href="/book-a-demo"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-3xl md:text-5xl font-black font-headline tracking-tighter text-primary italic uppercase leading-tight"
+            className="text-3xl md:text-5xl font-black font-headline tracking-tighter text-primary italic uppercase leading-[1.1]"
           >
             Book a Demo
           </Link>
         </div>
         
-        <div className="relative mt-auto space-y-6 pt-12">
+        <div className="mt-auto space-y-6 pt-12 pb-8">
           <div className="h-px bg-border" />
           <div className="space-y-1">
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Connect</p>

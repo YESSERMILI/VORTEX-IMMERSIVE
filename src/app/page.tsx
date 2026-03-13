@@ -56,12 +56,12 @@ export default function Home() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Get in Touch</span>
-                <h2 className="text-4xl md:text-6xl font-black font-headline tracking-tighter leading-none">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-black font-headline tracking-tighter leading-none uppercase">
                   Ready to Transform Your <span className="text-primary italic">Vision?</span>
                 </h2>
               </div>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Whether you&apos;re planning a stadium spectacle or an intimate interactive experience, our team is here to bring your ideas to life.
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+                Whether you're planning a stadium spectacle or an intimate interactive experience, our team is here to bring your ideas to life.
               </p>
               
               <div className="space-y-6 pt-8">
@@ -71,7 +71,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Email us</p>
-                    <p className="text-lg font-bold">hello@vorteximmersive.com</p>
+                    <p className="text-base md:text-lg font-bold">hello@vorteximmersive.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 group cursor-pointer">
@@ -80,7 +80,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Call us</p>
-                    <p className="text-lg font-bold">+1 (234) 567-890</p>
+                    <p className="text-base md:text-lg font-bold">+1 (234) 567-890</p>
                   </div>
                 </div>
               </div>

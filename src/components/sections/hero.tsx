@@ -15,8 +15,8 @@ export const Hero = () => {
 
     const currentTheme = resolvedTheme || theme;
     const isDark = currentTheme === 'dark';
-    const particleColor = isDark ? 0xffffff : 0x000000;
-    const sphereColor = isDark ? 0xffffff : 0x000000;
+    const particleColor = isDark ? 0xffffff : 0x121617;
+    const sphereColor = isDark ? 0xffffff : 0x121617;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -51,7 +51,7 @@ export const Hero = () => {
       size: 0.35,
       color: particleColor,
       transparent: true,
-      opacity: isDark ? 0.3 : 0.2,
+      opacity: isDark ? 0.3 : 0.25,
       blending: isDark ? THREE.AdditiveBlending : THREE.NormalBlending
     });
 
@@ -63,7 +63,7 @@ export const Hero = () => {
       color: sphereColor,
       wireframe: true,
       transparent: true,
-      opacity: isDark ? 0.04 : 0.06
+      opacity: isDark ? 0.04 : 0.08
     });
     const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere);
@@ -120,7 +120,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>

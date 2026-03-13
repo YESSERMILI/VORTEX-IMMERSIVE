@@ -10,16 +10,11 @@ import {
   ArrowLeft, 
   ArrowRight, 
   Cpu, 
-  Layers, 
-  Search, 
   Settings, 
-  Zap, 
   Monitor, 
   Box, 
   Code2, 
   Palette,
-  Workflow,
-  Sparkles,
   Play,
   Activity,
   Maximize2,
@@ -62,7 +57,7 @@ const SERVICE_CONTENT: Record<string, any> = {
     ],
     tech: [
       { icon: <Monitor className="w-5 h-5" />, label: "Processors", detail: "Brompton SX40 / Novastar" },
-      { icon: <Zap className="w-5 h-5" />, label: "Rendering", detail: "Notch / TouchDesigner" },
+      { icon: <Activity className="w-5 h-5" />, label: "Rendering", detail: "Notch / TouchDesigner" },
       { icon: <Activity className="w-5 h-5" />, label: "Sync", detail: "SMPTE / Dante / NDI" }
     ],
     features: ["Zero-Latency Rendering", "Audio-Reactive VFX", "Multi-Screen Show Control"],
@@ -79,7 +74,7 @@ const SERVICE_CONTENT: Record<string, any> = {
       { step: "04", title: "Deployment", desc: "On-site installation and tuning of environmental triggers." }
     ],
     tech: [
-      { icon: <Search className="w-5 h-5" />, label: "Sensing", detail: "Ouster LiDAR / Azure Kinect" },
+      { icon: <Cpu className="w-5 h-5" />, label: "Sensing", detail: "Ouster LiDAR / Azure Kinect" },
       { icon: <Code2 className="w-5 h-5" />, label: "AI Vision", detail: "Python / OpenCV / MediaPipe" },
       { icon: <ShieldCheck className="w-5 h-5" />, label: "Integration", detail: "Custom C++ Plugins / OSC" }
     ],
@@ -131,7 +126,7 @@ export default function ServiceDetailPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] flex items-end pb-12 md:pb-24 overflow-hidden border-b border-border">
+      <section className="relative h-[60vh] md:h-[80vh] flex items-end pb-12 md:pb-24 overflow-hidden border-b border-border">
         <Image 
           src={imageData.imageUrl} 
           alt={service.title} 
@@ -269,24 +264,24 @@ export default function ServiceDetailPage() {
       {/* Final Conversion */}
       <section className="py-24 md:py-40">
         <div className="container mx-auto px-4 md:px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-neutral-950 px-6 py-16 md:p-24 text-white relative overflow-hidden border border-white/5 text-center flex flex-col items-center">
-            <div className="absolute top-0 right-0 w-full h-full bg-primary/5 pointer-events-none" />
+          <div className="bg-primary px-6 py-16 md:p-24 text-primary-foreground relative overflow-hidden border border-border text-center flex flex-col items-center">
+            <div className="absolute top-0 right-0 w-full h-full bg-background/5 pointer-events-none" />
             <div className="max-w-2xl space-y-8 md:space-y-12 relative z-10">
-              <h2 className="text-2xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-[1.1] md:leading-[0.9]">
+              <h2 className="text-3xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-[1.1] md:leading-[0.9]">
                 Let's Build the <br />
-                <span className="italic text-primary">Extraordinary</span>
+                <span className="italic text-background">Extraordinary</span>
               </h2>
-              <p className="text-white/60 text-sm md:text-lg italic leading-relaxed font-body">
+              <p className="text-primary-foreground/60 text-sm md:text-lg italic leading-relaxed font-body">
                 Our directors are available for consultation to discuss the technical scope and creative vision for your next project.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 pt-4 md:pt-8">
-                <Button variant="default" className="rounded-none h-12 md:h-14 px-8 md:px-10 group bg-white text-black hover:bg-neutral-200 transition-all border-none text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
+                <Button variant="default" className="rounded-none h-12 md:h-14 px-8 md:px-10 group bg-background text-foreground hover:bg-background/90 transition-all border-none text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
                   <Link href="/book-a-demo">
                     Schedule Session
                     <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="rounded-none h-12 md:h-14 px-8 md:px-10 border-white/20 hover:bg-white/10 text-white text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
+                <Button variant="outline" className="rounded-none h-12 md:h-14 px-8 md:px-10 border-background/20 hover:bg-background/10 text-background text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
                   <Link href="/#contact">Project Brief</Link>
                 </Button>
               </div>

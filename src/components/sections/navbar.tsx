@@ -90,7 +90,7 @@ export const Navbar = () => {
         "fixed inset-0 bg-background/98 backdrop-blur-3xl z-[9999] transition-all duration-500 ease-in-out flex flex-col p-8 pt-32 lg:hidden",
         mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
-        <div className="flex flex-col gap-6 md:gap-8 overflow-y-auto no-scrollbar">
+        <div className="flex flex-col gap-4 md:gap-6 overflow-y-auto no-scrollbar">
           {navLinks.map((link, i) => (
             <Link 
               key={link.name} 
@@ -111,7 +111,7 @@ export const Navbar = () => {
           </Link>
         </div>
         
-        <div className="mt-auto space-y-6 pt-12 pb-8">
+        <div className="mt-auto space-y-4 pt-12 pb-8">
           <div className="h-px bg-border" />
           <div className="space-y-1">
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Connect</p>

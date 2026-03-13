@@ -4,18 +4,29 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     if (!canvasRef.current) return;
+
+    const currentTheme = resolvedTheme || theme;
+    const isDark = currentTheme === 'dark';
+    const particleColor = isDark ? 0xffffff : 0x000000;
+    const sphereColor = isDark ? 0xffffff : 0x000000;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 50;
 
-    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ 
+      canvas: canvasRef.current, 
+      antialias: true, 
+      alpha: true 
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
@@ -38,10 +49,10 @@ export const Hero = () => {
     
     const material = new THREE.PointsMaterial({
       size: 0.3,
-      color: 0xffffff,
+      color: particleColor,
       transparent: true,
-      opacity: 0.3,
-      blending: THREE.AdditiveBlending
+      opacity: isDark ? 0.3 : 0.15,
+      blending: isDark ? THREE.AdditiveBlending : THREE.NormalBlending
     });
 
     const particleSystem = new THREE.Points(geometry, material);
@@ -49,10 +60,10 @@ export const Hero = () => {
 
     const sphereGeo = new THREE.IcosahedronGeometry(15, 2);
     const sphereMat = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
+      color: sphereColor,
       wireframe: true,
       transparent: true,
-      opacity: 0.03
+      opacity: isDark ? 0.03 : 0.05
     });
     const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere);
@@ -92,10 +103,10 @@ export const Hero = () => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [resolvedTheme, theme]);
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-[70vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
@@ -104,7 +115,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] md:leading-[0.9] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>
@@ -116,7 +127,7 @@ export const Hero = () => {
           </span>
         </h1>
         
-        <p className="max-w-md md:max-w-lg text-sm md:text-lg text-muted-foreground leading-relaxed mb-10 md:mb-16 animate-fade-up [animation-delay:0.4s]">
+        <p className="max-w-md md:max-w-lg text-base md:text-lg text-muted-foreground leading-relaxed mb-10 md:mb-16 animate-fade-up [animation-delay:0.4s]">
           Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles.
         </p>
         

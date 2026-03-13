@@ -96,16 +96,16 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-48 pb-12" id="hero">
+    <section className="relative min-h-[85vh] md:min-h-[70vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
-        <div className="flex items-center gap-4 text-[10px] font-black tracking-[0.4em] text-muted-foreground uppercase mb-8 animate-fade-up">
-          <div className="w-10 h-px bg-primary" />
+        <div className="flex items-center gap-3 text-[9px] md:text-[10px] font-black tracking-[0.3em] md:tracking-[0.4em] text-muted-foreground uppercase mb-6 md:mb-8 animate-fade-up">
+          <div className="w-8 md:w-10 h-px bg-primary" />
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.9] mb-12 font-headline max-w-5xl">
+        <h1 className="text-[2.75rem] sm:text-6xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1] md:leading-[0.9] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>
@@ -117,18 +117,18 @@ export const Hero = () => {
           </span>
         </h1>
         
-        <p className="max-w-lg text-lg text-muted-foreground leading-relaxed mb-16 animate-fade-up [animation-delay:0.4s]">
+        <p className="max-w-md md:max-w-lg text-base md:text-lg text-muted-foreground leading-relaxed mb-10 md:mb-16 animate-fade-up [animation-delay:0.4s]">
           Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles.
         </p>
         
-        <div className="flex flex-wrap gap-6 animate-fade-up [animation-delay:0.6s]">
-          <Button size="lg" className="h-16 px-10 rounded-none group text-xs font-bold uppercase tracking-widest" asChild>
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-up [animation-delay:0.6s]">
+          <Button size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none group text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto" asChild>
             <a href="#works">
               Explore Works
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
-          <Button variant="outline" size="lg" className="h-16 px-10 rounded-none text-xs font-bold uppercase tracking-widest" asChild>
+          <Button variant="outline" size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto" asChild>
             <a href="#contact">Get in Touch</a>
           </Button>
         </div>

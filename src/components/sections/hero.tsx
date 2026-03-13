@@ -104,7 +104,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] md:leading-[0.9] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
+        <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1] md:leading-[0.9] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>
@@ -116,7 +116,7 @@ export const Hero = () => {
           </span>
         </h1>
         
-        <p className="max-w-md md:max-w-lg text-base md:text-lg text-muted-foreground leading-relaxed mb-10 md:mb-16 animate-fade-up [animation-delay:0.4s]">
+        <p className="max-w-md md:max-w-lg text-sm md:text-lg text-muted-foreground leading-relaxed mb-10 md:mb-16 animate-fade-up [animation-delay:0.4s]">
           Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles.
         </p>
         

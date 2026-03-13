@@ -131,7 +131,7 @@ export default function ServiceDetailPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-end pb-24 overflow-hidden border-b border-border">
+      <section className="relative h-[70vh] md:h-[80vh] flex items-end pb-12 md:pb-24 overflow-hidden border-b border-border">
         <Image 
           src={imageData.imageUrl} 
           alt={service.title} 
@@ -144,19 +144,19 @@ export default function ServiceDetailPage() {
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px] relative z-10">
           <Button 
             variant="ghost" 
-            className="mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2"
+            className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2"
             onClick={() => router.push('/')}
           >
             <ArrowLeft className="w-4 h-4" />
             Return to Services
           </Button>
-          <div className="space-y-6 max-w-5xl">
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary">Core Capability</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
+          <div className="space-y-4 md:space-y-6 max-w-5xl">
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em] text-primary">Core Capability</span>
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1] md:leading-[0.85] uppercase">
               {service.title.split(' ')[0]} <br />
               <span className="text-primary italic">{service.title.split(' ').slice(1).join(' ')}</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed italic max-w-2xl border-l-2 border-primary/20 pl-8">
+            <p className="text-base md:text-xl text-muted-foreground leading-relaxed italic max-w-2xl border-l-2 border-primary/20 pl-6 md:pl-8">
               {content.vision}
             </p>
           </div>
@@ -164,25 +164,25 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Narrative Section */}
-      <section className="py-32 border-b border-border bg-card">
+      <section className="py-20 md:py-32 border-b border-border bg-card">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32 items-start">
-            <div className="lg:col-span-8 space-y-16">
-              <div className="space-y-8">
-                <h2 className="text-3xl font-black font-headline tracking-tighter uppercase leading-tight">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-32 items-start">
+            <div className="lg:col-span-8 space-y-12 md:space-y-16">
+              <div className="space-y-6 md:space-y-8">
+                <h2 className="text-2xl md:text-3xl font-black font-headline tracking-tighter uppercase leading-tight">
                   The <span className="text-primary italic">Narrative</span> & The <span className="text-primary italic">Challenge</span>
                 </h2>
-                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed italic">
+                <div className="space-y-4 md:space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed italic">
                   <p>{content.longDesc}</p>
-                  <p className="p-8 border-l border-primary/20 bg-background/50 not-italic text-sm">
+                  <p className="p-6 md:p-8 border-l border-primary/20 bg-background/50 not-italic text-xs md:text-sm">
                     <strong>Technical Challenge:</strong> {content.challenge}
                   </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 pt-6">
                 {content.features.map((feature: string, i: number) => (
-                  <div key={i} className="flex flex-col gap-4 p-8 border border-border bg-background hover:border-primary transition-all group">
+                  <div key={i} className="flex flex-col gap-4 p-6 md:p-8 border border-border bg-background hover:border-primary transition-all group">
                     <Activity className="w-5 h-5 text-primary/40 group-hover:text-primary transition-colors" />
                     <span className="text-[10px] font-black uppercase tracking-widest">{feature}</span>
                   </div>
@@ -190,28 +190,28 @@ export default function ServiceDetailPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-4 space-y-8">
-               <div className="bg-background p-10 border border-border space-y-8">
+            <div className="lg:col-span-4 space-y-6 md:space-y-8">
+               <div className="bg-background p-8 md:p-10 border border-border space-y-6 md:space-y-8">
                  <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Technical Ecosystem</h3>
-                 <div className="space-y-8">
+                 <div className="space-y-6 md:space-y-8">
                   {content.tech.map((item: any, i: number) => (
                     <div key={i} className="space-y-2">
                       <div className="flex items-center gap-3">
                         <div className="text-primary/60">{item.icon}</div>
                         <p className="text-[9px] uppercase font-black text-muted-foreground tracking-widest">{item.label}</p>
                       </div>
-                      <p className="text-sm font-bold tracking-tight pl-8">{item.detail}</p>
+                      <p className="text-xs md:text-sm font-bold tracking-tight pl-8">{item.detail}</p>
                     </div>
                   ))}
                  </div>
                </div>
                
-               <div className="p-8 border border-border bg-primary/5 space-y-4">
+               <div className="p-6 md:p-8 border border-border bg-primary/5 space-y-4">
                   <div className="flex items-center gap-2 text-primary">
                     <HardDrive className="w-4 h-4" />
                     <span className="text-[10px] font-black uppercase tracking-widest">Global Ops</span>
                   </div>
-                  <p className="text-[11px] text-muted-foreground leading-relaxed italic">Our team provides 24/7 on-site technical support for all global deployments and high-stakes events.</p>
+                  <p className="text-[10px] md:text-[11px] text-muted-foreground leading-relaxed italic">Our team provides 24/7 on-site technical support for all global deployments and high-stakes events.</p>
                </div>
             </div>
           </div>
@@ -219,21 +219,21 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Detailed Workflow */}
-      <section className="py-32">
+      <section className="py-20 md:py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="max-w-xl mb-24">
+          <div className="max-w-xl mb-12 md:mb-24">
              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-4 block">Methodology</span>
-             <h2 className="text-4xl font-black font-headline tracking-tighter uppercase">Our <span className="text-primary italic">Process</span></h2>
+             <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tighter uppercase">Our <span className="text-primary italic">Process</span></h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {content.process.map((item: any) => (
-              <div key={item.step} className="group p-10 bg-card border border-border hover:border-primary transition-all duration-500">
-                <div className="text-5xl font-black font-headline text-primary/10 mb-8 group-hover:text-primary/20 transition-colors">
+              <div key={item.step} className="group p-8 md:p-10 bg-card border border-border hover:border-primary transition-all duration-500">
+                <div className="text-4xl md:text-5xl font-black font-headline text-primary/10 mb-6 md:mb-8 group-hover:text-primary/20 transition-colors">
                   {item.step}
                 </div>
-                <h4 className="font-bold text-sm uppercase tracking-tight mb-4">{item.title}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed italic">{item.desc}</p>
+                <h4 className="font-bold text-sm uppercase tracking-tight mb-3 md:mb-4">{item.title}</h4>
+                <p className="text-[11px] md:text-xs text-muted-foreground leading-relaxed italic">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -241,9 +241,9 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Cinematic Media Section */}
-      <section className="py-32 bg-card border-y border-border overflow-hidden">
+      <section className="py-20 md:py-32 bg-card border-y border-border overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="relative aspect-[21/9] bg-background border border-border group cursor-pointer overflow-hidden">
+          <div className="relative aspect-video lg:aspect-[21/9] bg-background border border-border group cursor-pointer overflow-hidden">
              <Image 
                 src={imageData.imageUrl} 
                 alt="Showcase" 
@@ -251,42 +251,42 @@ export default function ServiceDetailPage() {
                 className="object-cover opacity-40 transition-transform duration-[2000ms] group-hover:scale-105"
              />
              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                  <Play className="w-6 h-6 fill-white stroke-none ml-1" />
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                  <Play className="w-5 h-5 md:w-6 md:h-6 fill-white stroke-none ml-1" />
                 </div>
              </div>
-             <div className="absolute bottom-10 left-10 p-6 bg-background/90 backdrop-blur-2xl border border-white/10 space-y-1">
+             <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 p-4 md:p-6 bg-background/90 backdrop-blur-2xl border border-white/10 space-y-1">
                 <div className="flex items-center gap-2">
                   <Maximize2 className="w-3 h-3 text-primary" />
-                  <p className="text-[9px] uppercase font-bold tracking-widest text-primary">Technical Preview</p>
+                  <p className="text-[8px] md:text-[9px] uppercase font-bold tracking-widest text-primary">Technical Preview</p>
                 </div>
-                <p className="text-lg font-black tracking-tighter uppercase font-headline">Bespoke System Demo</p>
+                <p className="text-sm md:text-lg font-black tracking-tighter uppercase font-headline">Bespoke System Demo</p>
              </div>
           </div>
         </div>
       </section>
 
       {/* Final Conversion */}
-      <section className="py-40">
-        <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-neutral-950 p-16 md:p-24 text-white relative overflow-hidden border border-white/5 text-center flex flex-col items-center">
+      <section className="py-24 md:py-40">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12 max-w-[1400px]">
+          <div className="bg-neutral-950 px-6 py-16 md:p-24 text-white relative overflow-hidden border border-white/5 text-center flex flex-col items-center">
             <div className="absolute top-0 right-0 w-full h-full bg-primary/5 pointer-events-none" />
-            <div className="max-w-2xl space-y-12 relative z-10">
-              <h2 className="text-4xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-[0.9]">
+            <div className="max-w-2xl space-y-8 md:space-y-12 relative z-10">
+              <h2 className="text-2xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-[1.1] md:leading-[0.9]">
                 Let's Build the <br />
                 <span className="italic text-primary">Extraordinary</span>
               </h2>
-              <p className="text-white/60 text-lg italic leading-relaxed font-body">
+              <p className="text-white/60 text-sm md:text-lg italic leading-relaxed font-body">
                 Our directors are available for consultation to discuss the technical scope and creative vision for your next project.
               </p>
-              <div className="flex flex-wrap justify-center gap-6 pt-8">
-                <Button variant="default" className="rounded-none h-14 px-10 group bg-white text-black hover:bg-neutral-200 transition-all border-none text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 pt-4 md:pt-8">
+                <Button variant="default" className="rounded-none h-12 md:h-14 px-8 md:px-10 group bg-white text-black hover:bg-neutral-200 transition-all border-none text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
                   <Link href="/book-a-demo">
                     Schedule Session
                     <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="rounded-none h-14 px-10 border-white/20 hover:bg-white/10 text-white text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
+                <Button variant="outline" className="rounded-none h-12 md:h-14 px-8 md:px-10 border-white/20 hover:bg-white/10 text-white text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em]" asChild>
                   <Link href="/#contact">Project Brief</Link>
                 </Button>
               </div>

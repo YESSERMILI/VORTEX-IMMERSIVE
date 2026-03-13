@@ -32,17 +32,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-marquee {
-            animation: marquee 30s linear infinite;
-            display: inline-flex;
-            width: max-content;
-          }
-        `}} />
       </section>
 
       <Works />
@@ -50,17 +39,17 @@ export default function Home() {
       <About />
       
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-background border-t border-border">
+      <section id="contact" className="py-24 md:py-32 bg-background border-t border-border">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
             <div className="space-y-8">
               <div className="space-y-4">
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Get in Touch</span>
-                <h2 className="text-3xl sm:text-4xl md:text-6xl font-black font-headline tracking-tighter leading-none uppercase">
+                <h2 className="text-3xl md:text-6xl font-black font-headline tracking-tighter leading-none uppercase">
                   Ready to Transform Your <span className="text-primary italic">Vision?</span>
                 </h2>
               </div>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+              <p className="text-base md:text-xl text-muted-foreground leading-relaxed max-w-lg">
                 Whether you're planning a stadium spectacle or an intimate interactive experience, our team is here to bring your ideas to life.
               </p>
               

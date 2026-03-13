@@ -147,11 +147,11 @@ export default function ServiceDetailPage() {
           </Button>
           <div className="space-y-4 md:space-y-6 max-w-5xl">
             <span className="text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em] text-primary">Core Capability</span>
-            <h1 className="text-3xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1] md:leading-[0.85] uppercase">
+            <h1 className="text-2xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1] md:leading-[0.85] uppercase">
               {service.title.split(' ')[0]} <br />
               <span className="text-primary italic">{service.title.split(' ').slice(1).join(' ')}</span>
             </h1>
-            <p className="text-base md:text-xl text-muted-foreground leading-relaxed italic max-w-2xl border-l-2 border-primary/20 pl-6 md:pl-8">
+            <p className="text-sm md:text-xl text-muted-foreground leading-relaxed italic max-w-2xl border-l-2 border-primary/20 pl-6 md:pl-8">
               {content.vision}
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Narrative Section */}
-      <section className="py-20 md:py-32 border-b border-border bg-card">
+      <section className="py-16 md:py-32 border-b border-border bg-card">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-32 items-start">
             <div className="lg:col-span-8 space-y-12 md:space-y-16">
@@ -214,17 +214,17 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Detailed Workflow */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 md:py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="max-w-xl mb-12 md:mb-24">
              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-4 block">Methodology</span>
-             <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tighter uppercase">Our <span className="text-primary italic">Process</span></h2>
+             <h2 className="text-2xl md:text-4xl font-black font-headline tracking-tighter uppercase">Our <span className="text-primary italic">Process</span></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {content.process.map((item: any) => (
               <div key={item.step} className="group p-8 md:p-10 bg-card border border-border hover:border-primary transition-all duration-500">
-                <div className="text-4xl md:text-5xl font-black font-headline text-primary/10 mb-6 md:mb-8 group-hover:text-primary/20 transition-colors">
+                <div className="text-3xl md:text-5xl font-black font-headline text-primary/10 mb-6 md:mb-8 group-hover:text-primary/20 transition-colors">
                   {item.step}
                 </div>
                 <h4 className="font-bold text-sm uppercase tracking-tight mb-3 md:mb-4">{item.title}</h4>
@@ -236,7 +236,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Cinematic Media Section */}
-      <section className="py-20 md:py-32 bg-card border-y border-border overflow-hidden">
+      <section className="py-16 md:py-32 bg-card border-y border-border overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="relative aspect-video lg:aspect-[21/9] bg-background border border-border group cursor-pointer overflow-hidden">
              <Image 
@@ -262,16 +262,16 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Final Conversion */}
-      <section className="py-24 md:py-40">
+      <section className="py-20 md:py-40">
         <div className="container mx-auto px-4 md:px-6 lg:px-12 max-w-[1400px]">
           <div className="bg-primary px-6 py-16 md:p-24 text-primary-foreground relative overflow-hidden border border-border text-center flex flex-col items-center">
             <div className="absolute top-0 right-0 w-full h-full bg-background/5 pointer-events-none" />
             <div className="max-w-2xl space-y-8 md:space-y-12 relative z-10">
-              <h2 className="text-3xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-[1.1] md:leading-[0.9]">
+              <h2 className="text-2xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-[1.1] md:leading-[0.9]">
                 Let's Build the <br />
                 <span className="italic text-background">Extraordinary</span>
               </h2>
-              <p className="text-primary-foreground/60 text-sm md:text-lg italic leading-relaxed font-body">
+              <p className="text-primary-foreground/60 text-xs md:text-lg italic leading-relaxed font-body">
                 Our directors are available for consultation to discuss the technical scope and creative vision for your next project.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 pt-4 md:pt-8">

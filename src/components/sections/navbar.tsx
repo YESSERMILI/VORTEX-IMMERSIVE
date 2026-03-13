@@ -113,25 +113,25 @@ export const Navbar = () => {
           </Link>
         </div>
         
-        <div className="mt-auto space-y-8 pt-16 pb-8 relative z-10">
+        <div className="mt-auto space-y-10 pt-16 pb-8 relative z-10">
           <div className="h-px bg-border/40" />
-          <div className="grid grid-cols-2 gap-8">
-            <div className="space-y-2">
-              <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Connect</p>
-              <p className="text-sm font-bold">hello@vorteximmersive.com</p>
+          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-8">
+            <div className="space-y-3">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-black">Connect</p>
+              <p className="text-sm font-bold break-all">hello@vorteximmersive.com</p>
               <p className="text-sm font-bold">+1 (234) 567-890</p>
             </div>
-            <div className="space-y-2">
-              <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Social</p>
-              <div className="flex gap-4">
-                <Instagram className="w-4 h-4 hover:text-primary cursor-pointer transition-colors" />
-                <Twitter className="w-4 h-4 hover:text-primary cursor-pointer transition-colors" />
-                <Linkedin className="w-4 h-4 hover:text-primary cursor-pointer transition-colors" />
+            <div className="space-y-3">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-black">Social</p>
+              <div className="flex gap-6">
+                <Instagram className="w-5 h-5 hover:text-primary cursor-pointer transition-colors" />
+                <Twitter className="w-5 h-5 hover:text-primary cursor-pointer transition-colors" />
+                <Linkedin className="w-5 h-5 hover:text-primary cursor-pointer transition-colors" />
               </div>
             </div>
           </div>
           <div className="pt-4">
-             <span className="text-7xl font-black font-headline tracking-tighter opacity-5 select-none pointer-events-none">VORTEX</span>
+             <span className="text-6xl sm:text-7xl font-black font-headline tracking-tighter opacity-5 select-none pointer-events-none">VORTEX</span>
           </div>
         </div>
       </div>

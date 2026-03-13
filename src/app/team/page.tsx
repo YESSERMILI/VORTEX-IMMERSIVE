@@ -99,7 +99,7 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-end">
             <div className="lg:col-span-8 space-y-4 md:space-y-8">
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">The Collective</span>
-              <h1 className="text-3xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1] md:leading-[0.85] uppercase">
+              <h1 className="text-2xl sm:text-5xl lg:text-7xl font-black font-headline tracking-tighter leading-[1] md:leading-[0.85] uppercase">
                 THE MINDS BEHIND <br />
                 <span className="text-primary italic">THE SPECTACLE</span>
               </h1>

@@ -55,7 +55,7 @@ export default function BookADemoPage() {
               <CheckCircle2 className="w-12 h-12 text-primary" />
             </div>
             <div className="space-y-4">
-              <h1 className="text-4xl font-black font-headline tracking-tighter uppercase">Request <span className="text-primary italic">Confirmed</span></h1>
+              <h1 className="text-3xl sm:text-4xl font-black font-headline tracking-tighter uppercase">Request <span className="text-primary italic">Confirmed</span></h1>
               <p className="text-muted-foreground leading-relaxed">
                 Thank you for your interest in Vortex Immersive. A specialist from our creative technology team will contact you within 24 hours to confirm your personalized demonstration.
               </p>
@@ -89,7 +89,7 @@ export default function BookADemoPage() {
             <div className="lg:col-span-7 space-y-12">
               <div className="space-y-6">
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Live Session</span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-[0.95] uppercase">
+                <h1 className="text-2xl sm:text-5xl lg:text-6xl font-black font-headline tracking-tighter leading-[0.95] uppercase">
                   EXPERIENCE <br />
                   <span className="text-primary italic">THE FUTURE</span>
                 </h1>

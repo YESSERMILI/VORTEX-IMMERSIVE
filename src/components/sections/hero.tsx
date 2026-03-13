@@ -121,7 +121,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>

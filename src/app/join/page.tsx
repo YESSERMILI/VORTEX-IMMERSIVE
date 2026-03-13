@@ -43,7 +43,7 @@ export default function JoinPage() {
               <CheckCircle2 className="w-12 h-12 text-primary" />
             </div>
             <div className="space-y-4">
-              <h1 className="text-4xl font-black font-headline tracking-tighter uppercase">Application <span className="text-primary italic">Received</span></h1>
+              <h1 className="text-3xl sm:text-4xl font-black font-headline tracking-tighter uppercase">Application <span className="text-primary italic">Received</span></h1>
               <p className="text-muted-foreground leading-relaxed">
                 Thank you for your interest in joining the collective. Our team reviews all portfolios periodically. If your vision aligns with our current project trajectory, we will reach out.
               </p>
@@ -77,7 +77,7 @@ export default function JoinPage() {
             <div className="lg:col-span-6 space-y-12">
               <div className="space-y-6">
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Recruitment</span>
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
+                <h1 className="text-2xl sm:text-5xl lg:text-7xl font-black font-headline tracking-tighter leading-[0.85] uppercase">
                   SHAPE THE <br />
                   <span className="text-primary italic">FUTURE REALM</span>
                 </h1>

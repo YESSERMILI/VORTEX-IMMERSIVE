@@ -40,7 +40,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
             <div className="lg:col-span-8 space-y-6 md:space-y-8">
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">The Studio</span>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-black font-headline tracking-tighter leading-[0.95] uppercase">
+              <h1 className="text-2xl sm:text-4xl md:text-6xl font-black font-headline tracking-tighter leading-[0.95] uppercase">
                 PIONEERING <br />
                 <span className="text-primary italic">DIGITAL</span> REALMS
               </h1>
@@ -90,7 +90,7 @@ export default function AboutPage() {
             </div>
             <div className="flex flex-col justify-center space-y-10 md:space-y-12">
               <div className="space-y-4 md:space-y-6">
-                <h2 className="text-3xl md:text-4xl font-black font-headline tracking-tighter uppercase">OUR <span className="text-primary">PHILOSOPHY</span></h2>
+                <h2 className="text-2xl sm:text-4xl font-black font-headline tracking-tighter uppercase">OUR <span className="text-primary">PHILOSOPHY</span></h2>
                 <div className="space-y-4 md:space-y-6 text-muted-foreground text-base md:text-lg leading-relaxed italic">
                   <p>&quot;Technology should be invisible. The experience should be everything.&quot;</p>
                   <p className="not-italic">

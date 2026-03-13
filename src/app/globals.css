@@ -89,3 +89,13 @@
   display: inline-flex;
   width: max-content;
 }
+
+/* Custom Utilities */
+.animate-title-reveal {
+  animation: title-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes title-reveal {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}

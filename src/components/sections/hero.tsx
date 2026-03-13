@@ -30,7 +30,7 @@ export const Hero = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const particleCount = 2000;
+    const particleCount = 1500;
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
 
@@ -48,29 +48,31 @@ export const Hero = () => {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
     const material = new THREE.PointsMaterial({
-      size: 0.3,
+      size: 0.35,
       color: particleColor,
       transparent: true,
-      opacity: isDark ? 0.3 : 0.15,
+      opacity: isDark ? 0.3 : 0.2,
       blending: isDark ? THREE.AdditiveBlending : THREE.NormalBlending
     });
 
     const particleSystem = new THREE.Points(geometry, material);
     scene.add(particleSystem);
 
-    const sphereGeo = new THREE.IcosahedronGeometry(15, 2);
+    const sphereGeo = new THREE.IcosahedronGeometry(18, 2);
     const sphereMat = new THREE.MeshBasicMaterial({
       color: sphereColor,
       wireframe: true,
       transparent: true,
-      opacity: isDark ? 0.03 : 0.05
+      opacity: isDark ? 0.04 : 0.06
     });
     const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere);
 
     let time = 0;
+    let animationFrameId: number;
+
     const animate = () => {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
       time += 0.005;
 
       const pos = particleSystem.geometry.attributes.position.array as Float32Array;
@@ -102,11 +104,14 @@ export const Hero = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
   }, [resolvedTheme, theme]);
 
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
@@ -115,7 +120,7 @@ export const Hero = () => {
           <span>Creative Technology Studio</span>
         </div>
         
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
           <span className="block overflow-hidden">
             <span className="inline-block animate-title-reveal">WE CREATE</span>
           </span>

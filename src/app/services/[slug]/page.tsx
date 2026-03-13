@@ -148,7 +148,7 @@ export default function ServiceDetailPage() {
           </Button>
           <div className="space-y-4 md:space-y-6 max-w-5xl">
             <span className="text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em] text-primary">Core Capability</span>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1.1] md:leading-[0.85] uppercase">
+            <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1.1] md:leading-[0.85] uppercase">
               {service.title.split(' ')[0]} <br />
               <span className="text-primary italic">{service.title.split(' ').slice(1).join(' ')}</span>
             </h1>
@@ -262,31 +262,46 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Final Conversion */}
-      <section className="py-16 md:py-32">
-        <div className="container mx-auto px-4 md:px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-primary px-6 py-12 md:p-24 text-primary-foreground relative overflow-hidden border border-border text-center flex flex-col items-center">
-            <div className="absolute top-0 right-0 w-full h-full bg-background/5 pointer-events-none" />
+      {/* Final Conversion - Redesigned for Mobile & Theme Adaptive */}
+      <section className="py-12 md:py-32">
+        <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+          <div className="bg-[#0a0a0a] dark:bg-card px-6 py-16 md:p-24 text-white relative overflow-hidden border border-white/10 text-center flex flex-col items-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
+            
             <div className="max-w-2xl space-y-8 md:space-y-12 relative z-10">
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter uppercase leading-tight md:leading-[0.9]">
-                Let's Build the <br />
-                <span className="italic">Extraordinary</span>
+              <h2 className="text-2xl sm:text-4xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-tight md:leading-[0.9]">
+                Let&apos;s Build the <br />
+                <span className="text-primary italic">Extraordinary</span>
               </h2>
-              <p className="text-primary-foreground/70 text-[10px] md:text-lg italic leading-relaxed font-body max-w-lg mx-auto">
+              
+              <p className="text-white/60 text-[11px] md:text-lg italic leading-relaxed font-body max-w-lg mx-auto">
                 Our directors are available for consultation to discuss the technical scope and creative vision for your next project.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 pt-4 md:pt-8">
-                <Button variant="default" className="rounded-none h-12 md:h-14 px-8 md:px-10 group bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-all border-none text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em]" asChild>
+              
+              <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 pt-4">
+                <Button 
+                  variant="default" 
+                  className="rounded-none h-14 px-10 group bg-white text-black hover:bg-white/90 border-none text-[10px] font-black uppercase tracking-[0.3em]" 
+                  asChild
+                >
                   <Link href="/book-a-demo">
                     Schedule Session
                     <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="rounded-none h-12 md:h-14 px-8 md:px-10 border-primary-foreground/20 hover:bg-primary-foreground/10 text-primary-foreground text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em]" asChild>
+                
+                <Button 
+                  variant="outline" 
+                  className="rounded-none h-14 px-10 border-white/20 text-white hover:bg-white hover:text-black transition-all text-[10px] font-black uppercase tracking-[0.3em]" 
+                  asChild
+                >
                   <Link href="/#contact">Project Brief</Link>
                 </Button>
               </div>
             </div>
+            
+            {/* Background Accent */}
+            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
           </div>
         </div>
       </section>

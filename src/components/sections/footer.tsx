@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Instagram, Linkedin, Twitter, Github, ArrowUpRight } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
 
 const Logo = ({ className }: { className?: string }) => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={className}>
@@ -62,13 +62,18 @@ export const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-muted-foreground">Company</h4>
             <ul className="space-y-3">
-              {["Our Collective", "Manifesto", "Inquiries", "Opportunities"].map(item => (
-                <li key={item}>
+              {[
+                { name: "Selected Works", href: "/works" },
+                { name: "Our Collective", href: "/team" },
+                { name: "Manifesto", href: "/about" },
+                { name: "Inquiries", href: "/#contact" }
+              ].map(item => (
+                <li key={item.name}>
                   <Link 
-                    href={item === "Our Collective" ? "/team" : item === "Opportunities" ? "/join" : item === "Manifesto" ? "/about" : "/#contact"} 
+                    href={item.href} 
                     className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center group"
                   >
-                    {item}
+                    {item.name}
                     <ArrowUpRight className="ml-1 w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </li>

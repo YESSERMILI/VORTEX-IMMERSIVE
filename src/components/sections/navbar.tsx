@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -37,7 +36,7 @@ export const Navbar = () => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Works', href: '/#works' },
+    { name: 'Works', href: '/works' },
     { name: 'Services', href: '/services' },
     { name: 'Team', href: '/team' },
     { name: 'About', href: '/about' },

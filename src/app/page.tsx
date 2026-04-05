@@ -18,16 +18,16 @@ export default function Home() {
       
       <Hero />
       
-      {/* Stats Quick Ribbon - Professional Silver Ribbon */}
+      {/* Brand Ribbon */}
       <section className="bg-primary text-primary-foreground py-16 overflow-hidden relative border-y border-white/5">
         <div className="flex whitespace-nowrap animate-marquee items-center gap-12">
           {Array.from({length: 10}).map((_, i) => (
             <div key={i} className="flex items-center gap-12 text-[10px] font-black uppercase tracking-[0.5em]">
-              <span>Projection Mapping</span>
+              <span>Energizing Brands</span>
               <div className="w-1.5 h-1.5 rotate-45 bg-primary-foreground/30" />
-              <span>Stage Visuals</span>
+              <span>Adventizer Agency</span>
               <div className="w-1.5 h-1.5 rotate-45 bg-primary-foreground/30" />
-              <span>Interactive Tech</span>
+              <span>Event Strategy</span>
               <div className="w-1.5 h-1.5 rotate-45 bg-primary-foreground/30" />
             </div>
           ))}
@@ -44,32 +44,23 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
             <div className="space-y-8">
               <div className="space-y-4">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Get in Touch</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Get Energized</span>
                 <h2 className="text-3xl md:text-6xl font-black font-headline tracking-tighter leading-none uppercase">
-                  Ready to Transform Your <span className="text-primary italic">Vision?</span>
+                  Ready to Ignite Your <span className="text-primary italic">Brand?</span>
                 </h2>
               </div>
               <p className="text-base md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Whether you're planning a stadium spectacle or an intimate interactive experience, our team is here to bring your ideas to life.
+                Adventizer helps you bridge the gap between static communication and high-energy engagement. Let's talk about your next project.
               </p>
               
               <div className="space-y-6 pt-8">
                 <div className="flex items-center gap-6 group cursor-pointer">
                   <div className="w-12 h-12 flex items-center justify-center border border-border group-hover:border-primary transition-colors">
-                    <span className="text-xs font-bold text-primary">EM</span>
+                    <span className="text-xs font-bold text-primary">HI</span>
                   </div>
                   <div>
                     <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Email us</p>
-                    <p className="text-base md:text-lg font-bold">hello@vorteximmersive.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-12 h-12 flex items-center justify-center border border-border group-hover:border-primary transition-colors">
-                    <span className="text-xs font-bold text-primary">PH</span>
-                  </div>
-                  <div>
-                    <p className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest">Call us</p>
-                    <p className="text-base md:text-lg font-bold">+1 (234) 567-890</p>
+                    <p className="text-base md:text-lg font-bold">hello@adventizer.com</p>
                   </div>
                 </div>
               </div>

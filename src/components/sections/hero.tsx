@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useRef } from 'react';
@@ -16,8 +15,8 @@ export const Hero = () => {
 
     const currentTheme = resolvedTheme || theme;
     const isDark = currentTheme === 'dark';
-    const particleColor = isDark ? 0xffffff : 0x121617;
-    const sphereColor = isDark ? 0xffffff : 0x121617;
+    const particleColor = isDark ? 0xffffff : 0x000000;
+    const sphereColor = isDark ? 0xebc41a : 0xebc41a; // Brand yellow
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -31,7 +30,7 @@ export const Hero = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const particleCount = 1500;
+    const particleCount = 1000;
     const positions = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
 
@@ -40,31 +39,31 @@ export const Hero = () => {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 150;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 80;
 
-      velocities[i * 3] = (Math.random() - 0.5) * 0.015;
-      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.015;
-      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.015;
+      velocities[i * 3] = (Math.random() - 0.5) * 0.02;
+      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02;
+      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.02;
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
     const material = new THREE.PointsMaterial({
-      size: 0.35,
+      size: 0.3,
       color: particleColor,
       transparent: true,
-      opacity: isDark ? 0.3 : 0.25,
+      opacity: isDark ? 0.3 : 0.2,
       blending: isDark ? THREE.AdditiveBlending : THREE.NormalBlending
     });
 
     const particleSystem = new THREE.Points(geometry, material);
     scene.add(particleSystem);
 
-    const sphereGeo = new THREE.IcosahedronGeometry(18, 2);
+    const sphereGeo = new THREE.IcosahedronGeometry(22, 1);
     const sphereMat = new THREE.MeshBasicMaterial({
       color: sphereColor,
       wireframe: true,
       transparent: true,
-      opacity: isDark ? 0.04 : 0.08
+      opacity: 0.08
     });
     const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere);
@@ -112,40 +111,40 @@ export const Hero = () => {
   }, [resolvedTheme, theme]);
 
   return (
-    <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
       
       <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]">
-        <div className="flex items-center gap-3 text-[9px] md:text-[10px] font-black tracking-[0.3em] md:tracking-[0.4em] text-muted-foreground uppercase mb-6 md:mb-8 animate-fade-up">
+        <div className="flex items-center gap-3 text-[9px] md:text-[10px] font-black tracking-[0.3em] md:tracking-[0.4em] text-primary uppercase mb-6 md:mb-8 animate-fade-up">
           <div className="w-8 md:w-10 h-px bg-primary" />
-          <span>Creative Technology Studio</span>
+          <span>Energize Your Brand Communication</span>
         </div>
         
-        <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-8 md:mb-12 font-headline max-w-5xl uppercase">
           <span className="block overflow-hidden">
-            <span className="inline-block animate-title-reveal">WE CREATE</span>
+            <span className="inline-block animate-title-reveal">ADVENTIZER</span>
           </span>
           <span className="block overflow-hidden">
-            <span className="inline-block animate-title-reveal [animation-delay:0.1s]">IMMERSIVE</span>
+            <span className="inline-block animate-title-reveal [animation-delay:0.1s]">CREATES</span>
           </span>
           <span className="block overflow-hidden">
-            <span className="inline-block animate-title-reveal [animation-delay:0.2s] text-primary italic">EXPERIENCES</span>
+            <span className="inline-block animate-title-reveal [animation-delay:0.2s] text-primary italic">MOMENTUM</span>
           </span>
         </h1>
         
-        <p className="max-w-md md:max-w-lg text-base md:text-lg text-muted-foreground leading-relaxed mb-10 md:mb-16 animate-fade-up [animation-delay:0.4s]">
-          Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles.
+        <p className="max-w-md md:max-w-xl text-base md:text-xl text-muted-foreground leading-relaxed mb-10 md:mb-16 animate-fade-up [animation-delay:0.4s]">
+          We transform brand messages into powerful, high-energy experiences. Adventizer: where creative strategy meets technical brilliance.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-up [animation-delay:0.6s]">
-          <Button size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none group text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto" asChild>
+          <Button size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none group text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90" asChild>
             <a href="#works">
-              Explore Works
+              Our Portfoilio
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
-          <Button variant="outline" size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto" asChild>
-            <a href="#contact">Get in Touch</a>
+          <Button variant="outline" size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto border-primary/20 hover:border-primary transition-colors" asChild>
+            <a href="#contact">Start a Project</a>
           </Button>
         </div>
       </div>

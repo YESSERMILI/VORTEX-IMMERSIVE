@@ -1,11 +1,10 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'VORTEX IMMERSIVE | Creative Technology Studio',
-  description: 'Transforming spaces into digital wonders through projection mapping, interactive installations, and large-scale visual spectacles.',
+  title: 'ADVENTIZER | Event Agency & Creative Communication',
+  description: 'Adventizer: Energize your brand communication through high-impact events and creative technology.',
 };
 
 export default function RootLayout({

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -18,7 +17,7 @@ export const Preloader = () => {
         }
         return prev + 2;
       });
-    }, 20);
+    }, 15);
 
     return () => clearInterval(interval);
   }, []);
@@ -30,19 +29,25 @@ export const Preloader = () => {
       "fixed inset-0 bg-background z-[99999] flex flex-col items-center justify-center gap-12 transition-all duration-800",
       counter === 100 && "opacity-0 invisible"
     )}>
-      <div className="flex overflow-hidden text-5xl md:text-8xl font-black tracking-tighter font-headline">
-        {["V", "O", "R", "T", "E", "X"].map((letter, i) => (
-          <span
-            key={i}
-            className="inline-block animate-title-reveal"
-            style={{ animationDelay: `${0.1 + i * 0.05}s` }}
-          >
-            {letter}
-          </span>
-        ))}
+      <div className="flex flex-col items-center gap-6">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-primary animate-pulse">
+          <path d="M4 20L12 4L20 20" strokeLinecap="square" strokeLinejoin="miter" />
+          <path d="M8 14H16" strokeLinecap="square" strokeLinejoin="miter" />
+        </svg>
+        <div className="flex overflow-hidden text-4xl md:text-7xl font-black tracking-tighter font-headline">
+          {["A", "D", "V", "E", "N", "T", "I", "Z", "E", "R"].map((letter, i) => (
+            <span
+              key={i}
+              className="inline-block animate-title-reveal"
+              style={{ animationDelay: `${0.1 + i * 0.05}s` }}
+            >
+              {letter}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="flex items-center gap-4 w-64">
-        <span className="text-xs font-bold tracking-[0.2em] w-12">{counter}%</span>
+        <span className="text-xs font-bold tracking-[0.2em] w-12 text-primary">{counter}%</span>
         <div className="flex-1 h-px bg-border relative overflow-hidden">
           <div
             className="absolute left-0 top-0 h-full bg-primary transition-all duration-100 ease-out"

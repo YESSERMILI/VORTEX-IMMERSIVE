@@ -1,10 +1,6 @@
 'use server';
 /**
- * @fileOverview An AI assistant flow for the contact form that suggests relevant keywords, questions, and service integrations.
- *
- * - aiContactFormAssistant - A function that handles the AI assistance for the contact form.
- * - AiContactFormAssistantInput - The input type for the aiContactFormAssistant function.
- * - AiContactFormAssistantOutput - The return type for the aiContactFormAssistant function.
+ * @fileOverview An AI assistant flow for ADVENTIZER that suggests relevant keywords, questions, and brand energy integrations.
  */
 
 import {ai} from '@/ai/genkit';
@@ -26,14 +22,14 @@ export type AiContactFormAssistantInput = z.infer<
 const AiContactFormAssistantOutputSchema = z.object({
   suggestedKeywords: z
     .array(z.string())
-    .describe('A list of relevant keywords to include in the message.'),
+    .describe('A list of high-energy keywords to energize the brand communication.'),
   suggestedQuestions: z
     .array(z.string())
-    .describe('A list of clarifying questions for the user to consider.'),
+    .describe('A list of clarifying questions for the user to consider regarding their event vision.'),
   suggestedServices: z
     .array(z.string())
     .describe(
-      'A list of relevant services from VORTEX IMMERSIVE that match the inquiry.'
+      'A list of relevant services from ADVENTIZER that match the inquiry.'
     ),
 });
 export type AiContactFormAssistantOutput = z.infer<
@@ -50,17 +46,17 @@ const contactFormAssistantPrompt = ai.definePrompt({
   name: 'contactFormAssistantPrompt',
   input: {schema: AiContactFormAssistantInputSchema},
   output: {schema: AiContactFormAssistantOutputSchema},
-  prompt: `You are an AI assistant for a creative technology studio named VORTEX IMMERSIVE. Your goal is to help potential clients clearly articulate their project needs by suggesting relevant keywords, questions, and service integrations based on their current input in the contact form.
+  prompt: `You are an AI assistant for a creative event agency named ADVENTIZER. Your slogan is "Adventizer, energize your brand communication." Your goal is to help potential clients clearly articulate their project needs by suggesting relevant keywords, questions, and service integrations.
 
-The services offered by VORTEX IMMERSIVE are:
-- Projection Mapping (keywords: 3D mapping, architectural projection, media facades, immersive environments)
-- Stage Visuals (keywords: LED walls, kinetic screens, holographic displays, concerts, festivals, corporate events)
-- Interactive Installations (keywords: motion tracking, touch interfaces, AI-powered experiences, VR/AR, museums, exhibitions)
-- Content Production (keywords: CGI, motion graphics, real-time content, visual artistry, storytelling)
+The services offered by ADVENTIZER are:
+- Brand Activation (keywords: experiential marketing, brand identity, immersive engagement, product launches)
+- Live Production (keywords: stage design, event technology, concert visuals, opening ceremonies)
+- Digital Strategy (keywords: interactive installations, AI-powered experiences, VR/AR, motion tracking)
+- Creative Content (keywords: motion graphics, CGI, storytelling, high-energy visuals)
 
 Based on the user's current input, provide:
-1.  A list of up to 5 relevant keywords they might want to include in their message.
-2.  A list of up to 3 clarifying questions they might want to consider to better describe their project.
+1.  A list of up to 5 high-energy keywords they might want to include in their message.
+2.  A list of up to 3 clarifying questions they might want to consider to better describe their project goals.
 3.  A list of up to 2 services from the provided list that are most relevant to their inquiry.
 
 Current Subject: {{{subject}}}

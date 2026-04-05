@@ -7,6 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Sun, Moon, Menu, X, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+const Logo = ({ className }: { className?: string }) => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={className}>
+    <path d="M4 20L12 4L20 20" strokeLinecap="square" strokeLinejoin="miter" />
+    <path d="M8 14H16" strokeLinecap="square" strokeLinejoin="miter" />
+  </svg>
+);
+
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
@@ -43,8 +50,9 @@ export const Navbar = () => {
         scrolled || mobileMenuOpen ? "bg-background/95 backdrop-blur-md border-b border-border h-16" : "bg-transparent h-20 md:h-24"
       )}>
         <div className="container mx-auto max-w-[1400px] flex items-center justify-between">
-          <Link href="/" className="text-lg md:text-2xl font-black font-headline tracking-tighter">
-            VORTEX <span className="text-primary">IMMERSIVE</span>
+          <Link href="/" className="flex items-center gap-2 text-lg md:text-2xl font-black font-headline tracking-tighter">
+            <Logo className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+            <span>ADVENTIZER</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
@@ -80,8 +88,8 @@ export const Navbar = () => {
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
             
-            <Button className="hidden md:flex rounded-none h-10 px-6 text-xs font-bold uppercase tracking-widest" asChild>
-              <Link href="/book-a-demo">Book a Demo</Link>
+            <Button className="hidden md:flex rounded-none h-10 px-6 text-xs font-bold uppercase tracking-widest bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+              <Link href="/book-a-demo">Get Energized</Link>
             </Button>
           </div>
         </div>
@@ -109,7 +117,7 @@ export const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="text-4xl md:text-5xl font-black font-headline tracking-tighter text-primary italic uppercase leading-[1.1]"
           >
-            Book a Demo
+            Get Started
           </Link>
         </div>
         
@@ -118,8 +126,8 @@ export const Navbar = () => {
           <div className="flex flex-col sm:grid sm:grid-cols-2 gap-8">
             <div className="space-y-3">
               <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-black">Connect</p>
-              <p className="text-sm font-bold break-all">hello@vorteximmersive.com</p>
-              <p className="text-sm font-bold">+1 (234) 567-890</p>
+              <p className="text-sm font-bold break-all">hello@adventizer.com</p>
+              <p className="text-sm font-bold">+1 (234) ADVENT</p>
             </div>
             <div className="space-y-3">
               <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-black">Social</p>
@@ -131,7 +139,7 @@ export const Navbar = () => {
             </div>
           </div>
           <div className="pt-4">
-             <span className="text-6xl sm:text-7xl font-black font-headline tracking-tighter opacity-5 select-none pointer-events-none">VORTEX</span>
+             <span className="text-6xl sm:text-7xl font-black font-headline tracking-tighter opacity-5 select-none pointer-events-none text-primary">ADVENTIZER</span>
           </div>
         </div>
       </div>

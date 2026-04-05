@@ -40,7 +40,6 @@ export const Navbar = () => {
     { name: 'Services', href: '/services' },
     { name: 'Team', href: '/team' },
     { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/#contact' },
   ];
 
   return (

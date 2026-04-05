@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -266,23 +265,23 @@ export default function ServiceDetailPage() {
       {/* Conversion Section */}
       <section className="py-12 md:py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-[#0a0a0a] px-6 py-16 md:p-24 text-white relative overflow-hidden border border-white/10 text-center flex flex-col items-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
+          <div className="bg-primary px-6 py-16 md:p-24 text-primary-foreground relative overflow-hidden border border-white/10 text-center flex flex-col items-center">
+            <div className="absolute inset-0 bg-black/5 mix-blend-overlay pointer-events-none" />
             
             <div className="max-w-2xl space-y-8 md:space-y-12 relative z-10">
               <h2 className="text-2xl sm:text-4xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-tight md:leading-[0.9]">
                 LET&apos;S ENERGIZE THE <br />
-                <span className="text-primary italic">FUTURE</span>
+                <span className="italic">FUTURE</span>
               </h2>
               
-              <p className="text-white/60 text-xs md:text-lg italic leading-relaxed font-body max-w-lg mx-auto">
+              <p className="opacity-80 text-xs md:text-lg italic leading-relaxed font-body max-w-lg mx-auto">
                 Ready to transform your brand communication? Our directors are available for bespoke strategy consultations.
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 pt-4">
                 <Button 
-                  variant="default" 
-                  className="rounded-none h-14 px-10 group bg-white text-black hover:bg-white/90 border-none text-[10px] font-black uppercase tracking-[0.3em]" 
+                  size="lg"
+                  className="rounded-none h-14 px-10 group bg-black text-white hover:bg-black/90 border-none text-[10px] font-black uppercase tracking-[0.3em]" 
                   asChild
                 >
                   <Link href="/book-a-demo">
@@ -292,8 +291,9 @@ export default function ServiceDetailPage() {
                 </Button>
                 
                 <Button 
+                  size="lg"
                   variant="outline" 
-                  className="rounded-none h-14 px-10 border-white/20 text-white hover:bg-white hover:text-black transition-all text-[10px] font-black uppercase tracking-[0.3em]" 
+                  className="rounded-none h-14 px-10 border-black text-black hover:bg-black hover:text-white transition-all text-[10px] font-black uppercase tracking-[0.3em]" 
                   asChild
                 >
                   <Link href="/#contact">Project Brief</Link>

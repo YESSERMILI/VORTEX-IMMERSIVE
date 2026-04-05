@@ -155,10 +155,14 @@ export default function ServicesPage() {
                 Our creative directors are ready to discuss your next high-energy brand communication project.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button size="lg" variant="secondary" className="rounded-none h-14 px-10 font-black uppercase tracking-widest text-[10px]" asChild>
-                  <Link href="/#contact">Send a Project Brief</Link>
+                <Button size="lg" className="rounded-none h-14 px-10 font-black uppercase tracking-widest text-[10px] bg-black text-white hover:bg-black/90 border-none" asChild>
+                  <Link href="/#contact">
+                    Send a Project Brief
+                    <ArrowRight className="ml-3 w-4 h-4" />
+                  </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-none h-14 px-10 font-black uppercase tracking-widest text-[10px] border-primary-foreground/20 hover:bg-primary-foreground hover:text-primary" asChild>
+                
+                <Button size="lg" variant="outline" className="rounded-none h-14 px-10 border-black text-black hover:bg-black hover:text-white transition-all text-[10px] font-black uppercase tracking-widest" asChild>
                   <Link href="/#contact">Get Energized Now</Link>
                 </Button>
               </div>

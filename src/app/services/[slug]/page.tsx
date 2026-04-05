@@ -292,8 +292,7 @@ export default function ServiceDetailPage() {
                 
                 <Button 
                   size="lg"
-                  variant="outline" 
-                  className="rounded-none h-14 px-10 border-black text-black hover:bg-black hover:text-white transition-all text-[10px] font-black uppercase tracking-[0.3em]" 
+                  className="rounded-none h-14 px-10 bg-transparent border border-black text-black hover:bg-black hover:text-white transition-all text-[10px] font-black uppercase tracking-[0.3em]" 
                   asChild
                 >
                   <Link href="/#contact">Project Brief</Link>

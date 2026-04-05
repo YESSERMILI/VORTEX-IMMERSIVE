@@ -162,7 +162,7 @@ export default function ServicesPage() {
                   </Link>
                 </Button>
                 
-                <Button size="lg" variant="outline" className="rounded-none h-14 px-10 border-black text-black hover:bg-black hover:text-white transition-all text-[10px] font-black uppercase tracking-widest" asChild>
+                <Button size="lg" className="rounded-none h-14 px-10 bg-transparent border border-black text-black hover:bg-black hover:text-white transition-all text-[10px] font-black uppercase tracking-widest" asChild>
                   <Link href="/#contact">Get Energized Now</Link>
                 </Button>
               </div>

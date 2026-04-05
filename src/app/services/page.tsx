@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
 import { SERVICES } from '@/components/sections/services';
 import { Button } from '@/components/ui/button';
 import { 
   ArrowRight, 
+  ArrowLeft,
   Layers, 
   Monitor, 
   ShieldCheck, 
@@ -27,6 +29,7 @@ const ICON_MAP: Record<string, any> = {
 };
 
 export default function ServicesPage() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -40,6 +43,15 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 border-b border-border">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+          <Button 
+            variant="ghost" 
+            className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2 group h-auto py-0"
+            onClick={() => router.push('/')}
+          >
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em]">Return Home</span>
+          </Button>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-end">
             <div className="lg:col-span-8 space-y-4 md:space-y-8">
               <div className="flex items-center gap-3 text-[10px] font-black tracking-[0.4em] text-primary uppercase">

@@ -3,17 +3,19 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
 import { WORKS } from '@/components/sections/works';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
-import { ArrowRight, ArrowUpRight, Zap, Filter } from 'lucide-react';
+import { ArrowRight, ArrowLeft, ArrowUpRight, Zap, Filter } from 'lucide-react';
 
 const CATEGORIES = ['all', 'ceremony', 'concert', 'brand', 'installation'];
 
 export default function WorksPage() {
+  const router = useRouter();
   const [filter, setFilter] = useState('all');
   const [isVisible, setIsVisible] = useState(false);
 
@@ -30,6 +32,15 @@ export default function WorksPage() {
       {/* Hero Section */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 border-b border-border">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+          <Button 
+            variant="ghost" 
+            className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2 group h-auto py-0"
+            onClick={() => router.push('/')}
+          >
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em]">Return Home</span>
+          </Button>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-end">
             <div className="lg:col-span-8 space-y-4 md:space-y-8">
               <div className="flex items-center gap-3 text-[10px] font-black tracking-[0.4em] text-primary uppercase">

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -89,11 +88,11 @@ export default function TeamPage() {
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <Button 
             variant="ghost" 
-            className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2"
+            className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2 group h-auto py-0"
             onClick={() => router.push('/')}
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Studio
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em]">Return Home</span>
           </Button>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-end">

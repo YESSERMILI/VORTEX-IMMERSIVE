@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -30,11 +29,11 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <Button 
             variant="ghost" 
-            className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2"
+            className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2 group h-auto py-0"
             onClick={() => router.push('/')}
           >
-            <ArrowLeft className="w-4 h-4" />
-            Return Home
+            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em]">Return Home</span>
           </Button>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
@@ -47,7 +46,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-4 mt-4 md:mt-16">
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-sm">
-                Founded in 2007, Vortex Immersive was born from the intersection of architectural mapping and experimental interactive media.
+                Founded in 2007, Adventizer was born from the intersection of architectural mapping and experimental interactive media.
               </p>
             </div>
           </div>

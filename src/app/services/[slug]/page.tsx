@@ -29,7 +29,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const SERVICE_CONTENT: Record<string, any> = {
   "projection-mapping": {
-    longDesc: "Projection mapping is the cornerstone of our studio. We transform static geometry into dynamic, narrative-driven canvases. By utilizing sub-millimeter precision mapping, we turn architectural monuments and stadium stages into living stories that challenge the viewer's perception of reality.",
+    longDesc: "Projection mapping is a cornerstone capability at ADVENTIZER. We transform static geometry into dynamic, narrative-driven canvases. By utilizing sub-millimeter precision mapping, we turn architectural monuments and stadium stages into living stories that challenge the viewer's perception of reality.",
     vision: "Redefining architectural storytelling through light and spatial geometry.",
     challenge: "The complexity lies in mapping non-uniform surfaces while maintaining perfect color uniformity and focus across extreme distances. Our solution involves proprietary warping algorithms and automated calibration systems.",
     process: [
@@ -112,9 +112,9 @@ export default function ServiceDetailPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-background text-center p-6">
         <div className="space-y-6 max-w-md">
-          <h1 className="text-3xl font-black font-headline uppercase tracking-tighter">Service Profile <br /><span className="text-primary italic">Not Found</span></h1>
-          <p className="text-muted-foreground text-sm">We are constantly evolving our services. Please return home or contact us for bespoke inquiries.</p>
-          <Button variant="outline" className="rounded-none w-full h-14" onClick={() => router.push('/')}>Return to Overview</Button>
+          <h1 className="text-2xl font-black font-headline uppercase tracking-tighter">Service Profile <br /><span className="text-primary italic">Not Found</span></h1>
+          <p className="text-muted-foreground text-sm">We are constantly evolving our services. Please return to the overview or contact us for bespoke inquiries.</p>
+          <Button variant="outline" className="rounded-none w-full h-14" onClick={() => router.push('/services')}>Return to Overview</Button>
         </div>
       </div>
     );
@@ -141,10 +141,10 @@ export default function ServiceDetailPage() {
           <Button 
             variant="ghost" 
             className="mb-8 md:mb-12 pl-0 text-muted-foreground hover:text-primary transition-colors gap-2"
-            onClick={() => router.push('/')}
+            onClick={() => router.push('/services')}
           >
             <ArrowLeft className="w-4 h-4" />
-            Return to Services
+            Back to Services
           </Button>
           <div className="space-y-4 md:space-y-6 max-w-5xl">
             <span className="text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em] text-primary">Core Capability</span>
@@ -170,9 +170,10 @@ export default function ServiceDetailPage() {
                 </h2>
                 <div className="space-y-4 md:space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed italic">
                   <p>{content.longDesc}</p>
-                  <p className="p-6 md:p-8 border-l border-primary/20 bg-background/50 not-italic text-xs md:text-sm">
-                    <strong>Technical Challenge:</strong> {content.challenge}
-                  </p>
+                  <div className="p-6 md:p-8 border-l border-primary/20 bg-background/50 not-italic">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-2">Technical Challenge</p>
+                    <p className="text-xs md:text-sm">{content.challenge}</p>
+                  </div>
                 </div>
               </div>
 
@@ -205,16 +206,16 @@ export default function ServiceDetailPage() {
                <div className="p-6 md:p-8 border border-border bg-primary/5 space-y-4">
                   <div className="flex items-center gap-2 text-primary">
                     <HardDrive className="w-4 h-4" />
-                    <span className="text-[10px] font-black uppercase tracking-widest">Global Ops</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest">Global Support</span>
                   </div>
-                  <p className="text-[10px] md:text-[11px] text-muted-foreground leading-relaxed italic">Our team provides 24/7 on-site technical support for all global deployments and high-stakes events.</p>
+                  <p className="text-[10px] md:text-[11px] text-muted-foreground leading-relaxed italic">Adventizer provides 24/7 on-site technical monitoring for all high-energy live deployments.</p>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Detailed Workflow */}
+      {/* Methodology */}
       <section className="py-16 md:py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="max-w-xl mb-12 md:mb-24">
@@ -236,7 +237,7 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Cinematic Media Section */}
+      {/* Cinematic Showcase */}
       <section className="py-16 md:py-32 bg-card border-y border-border overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
           <div className="relative aspect-video lg:aspect-[21/9] bg-background border border-border group cursor-pointer overflow-hidden">
@@ -254,28 +255,28 @@ export default function ServiceDetailPage() {
              <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 p-4 md:p-6 bg-background/90 backdrop-blur-2xl border border-white/10 space-y-1">
                 <div className="flex items-center gap-2">
                   <Maximize2 className="w-3 h-3 text-primary" />
-                  <p className="text-[8px] md:text-[9px] uppercase font-bold tracking-widest text-primary">Technical Preview</p>
+                  <p className="text-[8px] md:text-[9px] uppercase font-bold tracking-widest text-primary">Live Preview</p>
                 </div>
-                <p className="text-sm md:text-lg font-black tracking-tighter uppercase font-headline">Bespoke System Demo</p>
+                <p className="text-sm md:text-lg font-black tracking-tighter uppercase font-headline">Bespoke Production Demo</p>
              </div>
           </div>
         </div>
       </section>
 
-      {/* Final Conversion - Redesigned for Mobile & Theme Adaptive */}
+      {/* Conversion Section */}
       <section className="py-12 md:py-32">
         <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-          <div className="bg-[#0a0a0a] dark:bg-card px-6 py-16 md:p-24 text-white relative overflow-hidden border border-white/10 text-center flex flex-col items-center">
+          <div className="bg-[#0a0a0a] px-6 py-16 md:p-24 text-white relative overflow-hidden border border-white/10 text-center flex flex-col items-center">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
             
             <div className="max-w-2xl space-y-8 md:space-y-12 relative z-10">
               <h2 className="text-2xl sm:text-4xl md:text-6xl font-black font-headline tracking-tighter uppercase leading-tight md:leading-[0.9]">
-                Let&apos;s Build the <br />
-                <span className="text-primary italic">Extraordinary</span>
+                LET&apos;S ENERGIZE THE <br />
+                <span className="text-primary italic">FUTURE</span>
               </h2>
               
-              <p className="text-white/60 text-[11px] md:text-lg italic leading-relaxed font-body max-w-lg mx-auto">
-                Our directors are available for consultation to discuss the technical scope and creative vision for your next project.
+              <p className="text-white/60 text-xs md:text-lg italic leading-relaxed font-body max-w-lg mx-auto">
+                Ready to transform your brand communication? Our directors are available for bespoke strategy consultations.
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 pt-4">
@@ -299,9 +300,6 @@ export default function ServiceDetailPage() {
                 </Button>
               </div>
             </div>
-            
-            {/* Background Accent */}
-            <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
           </div>
         </div>
       </section>

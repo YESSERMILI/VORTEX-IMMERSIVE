@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -37,7 +38,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: 'Works', href: '/#works' },
-    { name: 'Services', href: '/#services' },
+    { name: 'Services', href: '/services' },
     { name: 'Team', href: '/team' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/#contact' },
@@ -82,7 +83,7 @@ export const Navbar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden rounded-none h-10 w-10 relative z-[10002]"
+              className="lg:hidden rounded-none h-10 w-10 relative z-[10002] transition-colors hover:text-primary"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -97,7 +98,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={cn(
-        "fixed inset-0 bg-background/98 backdrop-blur-3xl z-[9999] transition-all duration-500 ease-in-out flex flex-col p-8 pt-24 lg:hidden overflow-y-auto no-scrollbar",
+        "fixed inset-0 bg-background z-[9999] transition-all duration-500 ease-in-out flex flex-col p-8 pt-24 lg:hidden overflow-y-auto no-scrollbar backdrop-blur-3xl",
         mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
         <div className="flex flex-col gap-4 md:gap-6 pt-12 relative z-10">
@@ -106,7 +107,7 @@ export const Navbar = () => {
               key={link.name} 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-4xl md:text-5xl font-black font-headline tracking-tighter hover:text-primary transition-colors uppercase leading-[1.1]"
+              className="text-3xl sm:text-4xl md:text-5xl font-black font-headline tracking-tighter hover:text-primary transition-colors uppercase leading-[1.1]"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               {link.name}
@@ -115,9 +116,9 @@ export const Navbar = () => {
           <Link 
             href="/book-a-demo"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-4xl md:text-5xl font-black font-headline tracking-tighter text-primary italic uppercase leading-[1.1]"
+            className="text-3xl sm:text-4xl md:text-5xl font-black font-headline tracking-tighter text-primary italic uppercase leading-[1.1]"
           >
-            Get Started
+            Get Energized
           </Link>
         </div>
         
@@ -126,8 +127,8 @@ export const Navbar = () => {
           <div className="flex flex-col sm:grid sm:grid-cols-2 gap-8">
             <div className="space-y-3">
               <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-black">Connect</p>
-              <p className="text-sm font-bold break-all">hello@adventizer.com</p>
-              <p className="text-sm font-bold">+1 (234) ADVENT</p>
+              <p className="text-xs sm:text-sm font-bold break-all">hello@adventizer.com</p>
+              <p className="text-xs sm:text-sm font-bold">+1 (234) ADVENT</p>
             </div>
             <div className="space-y-3">
               <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-black">Social</p>
@@ -138,8 +139,8 @@ export const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="pt-4">
-             <span className="text-6xl sm:text-7xl font-black font-headline tracking-tighter opacity-5 select-none pointer-events-none text-primary">ADVENTIZER</span>
+          <div className="pt-4 overflow-hidden">
+             <span className="text-5xl sm:text-7xl lg:text-9xl font-black font-headline tracking-tighter opacity-5 select-none pointer-events-none text-primary uppercase block whitespace-nowrap">ADVENTIZER</span>
           </div>
         </div>
       </div>

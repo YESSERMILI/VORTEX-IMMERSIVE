@@ -88,7 +88,7 @@ export const Navbar = () => {
             </Button>
             
             <Button className="hidden md:flex rounded-none h-10 px-6 text-xs font-bold uppercase tracking-widest bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-              <Link href="/#contact">Get Energized</Link>
+              <Link href="/get-energized">Get Energized</Link>
             </Button>
           </div>
         </div>
@@ -112,7 +112,7 @@ export const Navbar = () => {
             </Link>
           ))}
           <Link 
-            href="/#contact"
+            href="/get-energized"
             onClick={() => setMobileMenuOpen(false)}
             className="text-3xl sm:text-4xl md:text-5xl font-black font-headline tracking-tighter text-primary italic uppercase leading-[1.1]"
           >

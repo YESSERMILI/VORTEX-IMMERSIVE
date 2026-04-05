@@ -166,7 +166,7 @@ export const Hero = () => {
             </Link>
           </Button>
           <Button variant="outline" size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto border-primary/20 hover:border-primary transition-all duration-300 hover:bg-primary/5" asChild>
-            <Link href="/#contact">Start a Project</Link>
+            <Link href="/get-energized">Start a Project</Link>
           </Button>
         </div>
       </div>

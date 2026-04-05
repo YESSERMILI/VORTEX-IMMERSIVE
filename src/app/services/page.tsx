@@ -168,14 +168,14 @@ export default function ServicesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Button size="lg" className="rounded-none h-14 px-10 font-black uppercase tracking-widest text-[10px] bg-black text-white hover:bg-black/90 border-none" asChild>
-                  <Link href="/#contact">
+                  <Link href="/get-energized">
                     Send a Project Brief
                     <ArrowRight className="ml-3 w-4 h-4" />
                   </Link>
                 </Button>
                 
                 <Button size="lg" className="rounded-none h-14 px-10 bg-transparent border border-black text-black hover:bg-black hover:text-white transition-all text-[10px] font-black uppercase tracking-widest" asChild>
-                  <Link href="/#contact">Get Energized Now</Link>
+                  <Link href="/get-energized">Get Energized Now</Link>
                 </Button>
               </div>
             </div>

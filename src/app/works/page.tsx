@@ -159,7 +159,7 @@ export default function WorksPage() {
               Adventizer helps you bridge the gap between static communication and high-energy engagement.
             </p>
             <Button size="lg" className="h-14 md:h-16 px-10 md:px-12 rounded-none bg-primary text-primary-foreground text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-transform" asChild>
-              <Link href="/#contact">Ignite a Project</Link>
+              <Link href="/get-energized">Ignite a Project</Link>
             </Button>
           </div>
         </div>

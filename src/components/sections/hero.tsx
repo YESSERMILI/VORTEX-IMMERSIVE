@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -159,13 +160,13 @@ export const Hero = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-up [animation-delay:0.6s]">
           <Button size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none group text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 active:scale-95" asChild>
-            <a href="#works">
-              Our Portfolio
+            <Link href="/works">
+              Check Our Works
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </Button>
           <Button variant="outline" size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto border-primary/20 hover:border-primary transition-all duration-300 hover:bg-primary/5" asChild>
-            <a href="#contact">Start a Project</a>
+            <Link href="/book-a-demo">Start a Project</Link>
           </Button>
         </div>
       </div>

@@ -1,13 +1,13 @@
-
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 export const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const followerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Hide cursor on touch devices
@@ -16,8 +16,28 @@ export const CustomCursor = () => {
 
     setIsVisible(true);
 
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      }
+    };
+
+    const animateFollower = () => {
+      followerX += (mouseX - followerX) * 0.15;
+      followerY += (mouseY - followerY) * 0.15;
+
+      if (followerRef.current) {
+        followerRef.current.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
+      }
+      requestAnimationFrame(animateFollower);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -37,6 +57,7 @@ export const CustomCursor = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseover', handleMouseOver);
+    requestAnimationFrame(animateFollower);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -49,18 +70,18 @@ export const CustomCursor = () => {
   return (
     <>
       <div
+        ref={cursorRef}
         className={cn(
-          "fixed top-0 left-0 w-2.5 h-2.5 bg-primary rounded-full pointer-events-none z-[10001] mix-blend-difference transition-transform duration-150 ease-out -translate-x-1/2 -translate-y-1/2",
+          "fixed top-0 left-0 w-2.5 h-2.5 bg-primary rounded-full pointer-events-none z-[10001] mix-blend-difference transition-transform duration-75 ease-out -translate-x-1/2 -translate-y-1/2",
           isHovered && "scale-[6] bg-transparent border-[0.5px] border-primary"
         )}
-        style={{ left: `${position.x}px`, top: `${position.y}px` }}
       />
       <div
+        ref={followerRef}
         className={cn(
           "fixed top-0 left-0 w-10 h-10 border border-primary/50 rounded-full pointer-events-none z-[10000] transition-all duration-300 ease-out -translate-x-1/2 -translate-y-1/2",
           isHovered && "w-20 h-20 opacity-0"
         )}
-        style={{ left: `${position.x}px`, top: `${position.y}px` }}
       />
     </>
   );

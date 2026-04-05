@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import { Layers, Monitor, ShieldCheck, PlayCircle, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -8,50 +8,51 @@ import { cn } from '@/lib/utils';
 export const SERVICES = [
   {
     id: "projection-mapping",
-    title: "Projection Mapping",
+    title: "Brand Activation",
     desc: "Transform any surface into a dynamic video canvas. We create precise 3D-mapped projections for architecture, stages, and custom objects.",
-    tags: ["Media Facades", "3D Mapping", "Architectural"],
+    tags: ["Experiential", "3D Mapping", "Architectural"],
     icon: <Layers className="w-8 h-8" />
   },
   {
     id: "stage-visuals",
-    title: "Stage Visuals",
+    title: "Live Production",
     desc: "Custom-designed visual content for concerts, festivals, and corporate events. LED walls, kinetic screens, and holographic displays.",
     tags: ["Concerts", "Festivals", "LED"],
     icon: <Monitor className="w-8 h-8" />
   },
   {
     id: "interactive-installations",
-    title: "Interactive Installations",
+    title: "Digital Strategy",
     desc: "Engage your audience with responsive installations. Motion tracking, touch interfaces, and AI-powered experiences.",
-    tags: ["Museums", "Exhibitions", "VR/AR"],
+    tags: ["Interactive", "Exhibitions", "AI"],
     icon: <ShieldCheck className="w-8 h-8" />
   },
   {
     id: "content-production",
-    title: "Content Production",
+    title: "Creative Content",
     desc: "High-end CGI, motion graphics, and real-time content creation. We bring stories to life with stunning visual artistry.",
-    tags: ["CGI", "Motion", "Real-time"],
+    tags: ["CGI", "Motion", "High Energy"],
     icon: <PlayCircle className="w-8 h-8" />
   }
 ];
 
 export const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) setIsVisible(true);
-    }, { threshold: 0.1 });
-    const element = document.getElementById('services-section');
-    if (element) observer.observe(element);
+    }, { threshold: 0.15 });
+    
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-card border-y border-border" id="services">
-      <div id="services-section" className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
-        <div className={cn("max-w-3xl mb-12 md:mb-24 opacity-0", isVisible && "animate-fade-up")}>
+    <section className="py-20 md:py-32 bg-card border-y border-border" id="services" ref={sectionRef}>
+      <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+        <div className={cn("max-w-3xl mb-12 md:mb-24 transition-all duration-1000", isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
           <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-4 md:mb-6 block">Our Capabilities</span>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 md:mb-8 font-headline uppercase leading-tight">
             Digital <span className="text-primary italic">Spectacles</span>
@@ -67,12 +68,12 @@ export const Services = () => {
               href={`/services/${s.id}`}
               key={s.id}
               className={cn(
-                "group relative bg-card p-8 md:p-12 lg:p-16 transition-all duration-500 hover:bg-background/80 opacity-0 block overflow-hidden",
-                isVisible && "animate-fade-up"
+                "group relative bg-card p-8 md:p-12 lg:p-16 transition-all duration-700 hover:bg-background/80 block overflow-hidden",
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
               )}
-              style={{ animationDelay: `${0.2 + i * 0.1}s` }}
+              style={{ transitionDelay: `${0.1 + i * 0.15}s` }}
             >
-              <div className="text-primary mb-8 md:mb-12 transition-transform duration-500 group-hover:scale-110 origin-left">
+              <div className="text-primary mb-8 md:mb-12 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 origin-left">
                 {s.icon}
               </div>
               <h3 className="text-xl md:text-2xl font-black font-headline mb-4 md:mb-6 group-hover:text-primary transition-colors uppercase tracking-tight leading-none">{s.title}</h3>
@@ -87,7 +88,7 @@ export const Services = () => {
                 ))}
               </div>
               <div className="absolute top-8 right-8 md:top-12 md:right-12 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border border-border group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 group-hover:text-primary-foreground" />
+                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 group-hover:text-primary-foreground group-hover:rotate-45 transition-transform" />
               </div>
               
               <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700 pointer-events-none" />

@@ -8,15 +8,15 @@ import { useTheme } from 'next-themes';
 
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const mouse = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!canvasRef.current) return;
 
-    const currentTheme = resolvedTheme || theme;
-    const isDark = currentTheme === 'dark';
+    const isDark = resolvedTheme === 'dark';
     const particleColor = isDark ? 0xffffff : 0x000000;
-    const sphereColor = isDark ? 0xebc41a : 0xebc41a; // Brand yellow
+    const sphereColor = 0xebc41a; // Brand yellow
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -30,35 +30,39 @@ export const Hero = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const particleCount = 1000;
+    const particleCount = 1200;
     const positions = new Float32Array(particleCount * 3);
-    const velocities = new Float32Array(particleCount * 3);
+    const initialPositions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 150;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 150;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 80;
+      const x = (Math.random() - 0.5) * 160;
+      const y = (Math.random() - 0.5) * 160;
+      const z = (Math.random() - 0.5) * 100;
+      
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
 
-      velocities[i * 3] = (Math.random() - 0.5) * 0.02;
-      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02;
-      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.02;
+      initialPositions[i * 3] = x;
+      initialPositions[i * 3 + 1] = y;
+      initialPositions[i * 3 + 2] = z;
     }
 
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
     const material = new THREE.PointsMaterial({
-      size: 0.3,
+      size: 0.35,
       color: particleColor,
       transparent: true,
-      opacity: isDark ? 0.3 : 0.2,
+      opacity: isDark ? 0.4 : 0.3,
       blending: isDark ? THREE.AdditiveBlending : THREE.NormalBlending
     });
 
     const particleSystem = new THREE.Points(geometry, material);
     scene.add(particleSystem);
 
-    const sphereGeo = new THREE.IcosahedronGeometry(22, 1);
+    const sphereGeo = new THREE.IcosahedronGeometry(24, 1);
     const sphereMat = new THREE.MeshBasicMaterial({
       color: sphereColor,
       wireframe: true,
@@ -71,26 +75,42 @@ export const Hero = () => {
     let time = 0;
     let animationFrameId: number;
 
+    const handleMouseMove = (event: MouseEvent) => {
+      mouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
       time += 0.005;
 
       const pos = particleSystem.geometry.attributes.position.array as Float32Array;
+      
       for (let i = 0; i < particleCount; i++) {
-        pos[i * 3] += velocities[i * 3];
-        pos[i * 3 + 1] += velocities[i * 3 + 1];
-        pos[i * 3 + 2] += velocities[i * 3 + 2];
+        // Natural drift
+        const idx = i * 3;
+        pos[idx] += Math.sin(time + initialPositions[idx]) * 0.01;
+        pos[idx + 1] += Math.cos(time + initialPositions[idx + 1]) * 0.01;
 
-        if (Math.abs(pos[i * 3]) > 75) velocities[i * 3] *= -1;
-        if (Math.abs(pos[i * 3 + 1]) > 75) velocities[i * 3 + 1] *= -1;
-        if (Math.abs(pos[i * 3 + 2]) > 40) velocities[i * 3 + 2] *= -1;
+        // Mouse interaction
+        const dx = pos[idx] - (mouse.current.x * 50);
+        const dy = pos[idx + 1] - (mouse.current.y * 50);
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < 20) {
+          const force = (20 - dist) / 20;
+          pos[idx] += dx * force * 0.02;
+          pos[idx + 1] += dy * force * 0.02;
+        }
       }
 
       particleSystem.geometry.attributes.position.needsUpdate = true;
-      particleSystem.rotation.y = time * 0.03;
+      particleSystem.rotation.y = time * 0.02;
 
-      sphere.rotation.x = time * 0.05;
-      sphere.rotation.y = time * 0.08;
+      sphere.rotation.x = time * 0.04;
+      sphere.rotation.y = time * 0.06;
       
       renderer.render(scene, camera);
     };
@@ -106,9 +126,10 @@ export const Hero = () => {
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [resolvedTheme, theme]);
+  }, [resolvedTheme]);
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 pb-12" id="hero">
@@ -137,13 +158,13 @@ export const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-up [animation-delay:0.6s]">
-          <Button size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none group text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90" asChild>
+          <Button size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none group text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 active:scale-95" asChild>
             <a href="#works">
-              Our Portfoilio
+              Our Portfolio
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
-          <Button variant="outline" size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto border-primary/20 hover:border-primary transition-colors" asChild>
+          <Button variant="outline" size="lg" className="h-14 md:h-16 px-8 md:px-10 rounded-none text-[10px] md:text-xs font-bold uppercase tracking-widest w-full sm:w-auto border-primary/20 hover:border-primary transition-all duration-300 hover:bg-primary/5" asChild>
             <a href="#contact">Start a Project</a>
           </Button>
         </div>

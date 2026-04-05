@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from 'react';
@@ -53,7 +52,7 @@ export default function ServicesPage() {
               </h1>
             </div>
             <div className="lg:col-span-4">
-              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-sm italic">
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-sm italic">
                 Adventizer: where creative strategy meets technical brilliance. We transform messages into high-energy digital spectacles.
               </p>
             </div>
@@ -160,7 +159,7 @@ export default function ServicesPage() {
                   <Link href="/#contact">Send a Project Brief</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-none h-14 px-10 font-black uppercase tracking-widest text-[10px] border-primary-foreground/20 hover:bg-primary-foreground hover:text-primary" asChild>
-                  <Link href="/book-a-demo">Schedule Demo Session</Link>
+                  <Link href="/#contact">Get Energized Now</Link>
                 </Button>
               </div>
             </div>
